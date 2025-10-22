@@ -196,11 +196,11 @@ export default function Header() {
           {/* Bottom Navigation Bar - Desktop */}
           <nav className="hidden lg:block bg-[#4169b8] rounded-full px-8 py-3">
             <ul className="flex justify-between items-center text-white text-sm font-medium">
-              <li><Link href="#business-loans" className="hover:text-gray-200 transition">BUSINESS LOANS</Link></li>
-              <li><Link href="#commercial-mortgages" className="hover:text-gray-200 transition">COMMERCIAL MORTGAGES</Link></li>
-              <li><Link href="#buy-to-let" className="hover:text-gray-200 transition">BUY TO LETS HMO/MUFB</Link></li>
-              <li><Link href="#development-finance" className="hover:text-gray-200 transition">DEVELOPMENT FINANCE</Link></li>
-              <li><Link href="#bridging-loans" className="hover:text-gray-200 transition">BRIDGING LOANS</Link></li>
+              <li><Link href="#business-loans" className="hover:text-gray-200 transition">Business Loans</Link></li>
+              <li><Link href="#commercial-mortgages" className="hover:text-gray-200 transition">Commercial Mortgages</Link></li>
+              <li><Link href="#buy-to-let" className="hover:text-gray-200 transition">Buy to Lets HMO/MUFB</Link></li>
+              <li><Link href="#development-finance" className="hover:text-gray-200 transition">Development Finance</Link></li>
+              <li><Link href="#bridging-loans" className="hover:text-gray-200 transition">Bridging Loans</Link></li>
               <li><Link href="#asset-finance" className="hover:text-gray-200 transition">Asset Finance</Link></li>
               <li><Link href="#business-consultancy" className="hover:text-gray-200 transition">Business Consultancy</Link></li>
             </ul>
