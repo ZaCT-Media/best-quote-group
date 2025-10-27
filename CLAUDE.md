@@ -1,0 +1,2 @@
+- all buttons should be cursor pointer and by default tailwind does not make buttons cursor pointer
+- not everything has to be a card, only use "card style" when it makes sense
