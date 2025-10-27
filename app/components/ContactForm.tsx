@@ -44,7 +44,7 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
             Get in Touch
           </h2>
           <p className="text-gray-600 text-center mb-8">
-            Ready to discuss your {serviceName} needs? Fill out the form below and we'll be in touch.
+            Ready to discuss your {serviceName} needs? Fill out the form below and we&apos;ll be in touch.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -113,7 +113,7 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
                 className="mt-1 h-5 w-5 text-[#464f7f] border-gray-300 rounded focus:ring-[#464f7f]"
               />
               <label htmlFor="agreeToUpdates" className="ml-3 text-sm text-gray-700">
-                I agree to receive communication updates about Best Quote Commercial Finance's {serviceName} products and services.{' '}
+                I agree to receive communication updates about Best Quote Commercial Finance&apos;s {serviceName} products and services.{' '}
                 <Link href="#privacy-policy" className="text-[#464f7f] hover:text-[#2e3450] underline">
                   Privacy Policy
                 </Link>
