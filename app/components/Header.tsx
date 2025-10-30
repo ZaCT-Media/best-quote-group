@@ -7,13 +7,14 @@ import { useState } from 'react';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       {/* Mobile Phone Banner */}
       <div className="lg:hidden bg-[#464f7f] text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <a href="tel:01279909750" className="flex items-center justify-center space-x-2">
+          <a href="tel:01279909750" className="flex items-center justify-center space-x-2 cursor-pointer">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
@@ -22,41 +23,119 @@ export default function Header() {
         </div>
       </div>
 
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-6 relative">
+      <header className="bg-white shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Top Header */}
-          <div className="flex justify-between items-center lg:py-3">
+          <div className="flex justify-between items-center py-3 lg:py-4">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo-2.jpg"
                   alt="BestQuote Commercial Finance"
                   width={500}
                   height={200}
-                  className="h-24 sm:h-32 md:h-36 lg:h-40 w-auto"
+                  className="h-16 sm:h-20 lg:h-20 w-auto cursor-pointer"
                   priority
                 />
               </Link>
             </div>
 
             {/* Right side: Navigation and Phone */}
-            <div className="flex flex-col items-end justify-center lg:space-y-5">
+            <div className="flex flex-col items-end justify-center lg:space-y-3">
               {/* Top Navigation - Desktop */}
-              <nav className="hidden lg:flex space-x-6 text-sm text-gray-600">
-                <Link href="#about" className="hover:text-[#464f7f] transition">
+              <nav className="hidden lg:flex items-center space-x-4 text-sm text-gray-600">
+                <Link href="#about" className="hover:text-[#464f7f] transition cursor-pointer">
                   ABOUT US
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link href="#what-we-do" className="hover:text-[#464f7f] transition">
+                <Link href="#what-we-do" className="hover:text-[#464f7f] transition cursor-pointer">
                   WHAT WE DO
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link href="#how-we-work" className="hover:text-[#464f7f] transition">
+                <Link href="#how-we-work" className="hover:text-[#464f7f] transition cursor-pointer">
                   HOW WE WORK
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link href="#contact" className="hover:text-[#464f7f] transition">
+
+                {/* Services Dropdown - Desktop */}
+                <div className="relative">
+                  <button
+                    onClick={() => setDesktopServicesOpen(!desktopServicesOpen)}
+                    onMouseEnter={() => setDesktopServicesOpen(true)}
+                    className="flex items-center space-x-1 hover:text-[#464f7f] transition cursor-pointer"
+                  >
+                    <span>SERVICES</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform ${desktopServicesOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {desktopServicesOpen && (
+                    <div
+                      onMouseLeave={() => setDesktopServicesOpen(false)}
+                      className="absolute top-full right-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                    >
+                      <Link
+                        href="#business-loans"
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
+                        onClick={() => setDesktopServicesOpen(false)}
+                      >
+                        Business Loans
+                      </Link>
+                      <Link
+                        href="#commercial-mortgages"
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
+                        onClick={() => setDesktopServicesOpen(false)}
+                      >
+                        Commercial Mortgages
+                      </Link>
+                      <Link
+                        href="#buy-to-let"
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
+                        onClick={() => setDesktopServicesOpen(false)}
+                      >
+                        Buy to Let HMO/MUFB
+                      </Link>
+                      <Link
+                        href="#development-finance"
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
+                        onClick={() => setDesktopServicesOpen(false)}
+                      >
+                        Development Finance
+                      </Link>
+                      <Link
+                        href="#bridging-loans"
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
+                        onClick={() => setDesktopServicesOpen(false)}
+                      >
+                        Bridging Loans
+                      </Link>
+                      <Link
+                        href="#asset-finance"
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
+                        onClick={() => setDesktopServicesOpen(false)}
+                      >
+                        Asset Finance
+                      </Link>
+                      <Link
+                        href="#business-consultancy"
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
+                        onClick={() => setDesktopServicesOpen(false)}
+                      >
+                        Business Consultancy
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <span className="text-gray-300">|</span>
+                <Link href="#contact" className="hover:text-[#464f7f] transition cursor-pointer">
                   CONTACT US
                 </Link>
               </nav>
@@ -73,11 +152,11 @@ export default function Header() {
               </button>
 
               {/* Phone - Desktop Only */}
-              <a href="tel:01279909750" className="hidden lg:flex items-center space-x-2 text-[#464f7f]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <a href="tel:01279909750" className="hidden lg:flex items-center space-x-2 text-[#464f7f] cursor-pointer">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-3xl font-bold">01279 909750</span>
+                <span className="text-2xl font-bold">01279 909750</span>
               </a>
             </div>
           </div>
@@ -192,19 +271,6 @@ export default function Header() {
               </div>
             </nav>
         )}
-
-          {/* Bottom Navigation Bar - Desktop */}
-          <nav className="hidden lg:block bg-[#464f7f] rounded-full px-8 py-3">
-            <ul className="flex justify-between items-center text-white text-sm font-medium">
-              <li><Link href="#business-loans" className="hover:text-gray-200 transition">Business Loans</Link></li>
-              <li><Link href="#commercial-mortgages" className="hover:text-gray-200 transition">Commercial Mortgages</Link></li>
-              <li><Link href="#buy-to-let" className="hover:text-gray-200 transition">Buy to Lets HMO/MUFB</Link></li>
-              <li><Link href="#development-finance" className="hover:text-gray-200 transition">Development Finance</Link></li>
-              <li><Link href="#bridging-loans" className="hover:text-gray-200 transition">Bridging Loans</Link></li>
-              <li><Link href="#asset-finance" className="hover:text-gray-200 transition">Asset Finance</Link></li>
-              <li><Link href="#business-consultancy" className="hover:text-gray-200 transition">Business Consultancy</Link></li>
-            </ul>
-          </nav>
         </div>
       </header>
     </div>
