@@ -49,11 +49,11 @@ export default function BuyToLetPage() {
           imagePath="/hmo-hero.jpg"
         />
 
-        {/* Main Content Section */}
+        {/* Main Content Section - Three Column Layout */}
         <section className="py-12 bg-[#2e3450]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Left Sidebar - Images */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              {/* Left Column - Images */}
               <div className="lg:col-span-3 space-y-4">
                 <div className="bg-white rounded-lg overflow-hidden shadow-lg">
                   <Image
@@ -84,9 +84,9 @@ export default function BuyToLetPage() {
                 </div>
               </div>
 
-              {/* Main Content Area */}
-              <div className="lg:col-span-9">
-                <div className="bg-white rounded-lg p-8 shadow-lg">
+              {/* Middle Column - Text Content */}
+              <div className="lg:col-span-5">
+                <div className="bg-white rounded-lg p-8 shadow-lg h-full">
                   <div className="mb-8">
                     <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
                       House of Multiple Occupancy (HMO)
@@ -135,55 +135,13 @@ export default function BuyToLetPage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Contact Us Section */}
-        <section className="py-16 bg-gray-50" id="contact">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-              Contact Us
-            </h2>
+              {/* Right Column - Contact Form */}
+              <div className="lg:col-span-4">
+                <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-[200px] lg:top-[260px]">
+                  <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
 
-            <div className="bg-[#2e3450] rounded-lg p-8 md:p-12 shadow-lg">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Information - Left Column */}
-              <div className="text-white">
-                <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
-
-                <div className="space-y-8">
-                  {/* Phone */}
-                  <div>
-                    <p className="text-white/70 text-sm mb-2">Call us</p>
-                    <a href="tel:01279909750" className="text-2xl font-semibold hover:text-white/90 transition">
-                      01279 909750
-                    </a>
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <p className="text-white/70 text-sm mb-2">Email us</p>
-                    <a href="mailto:info@bestquotecommercialfinance.com" className="text-base md:text-lg hover:text-white/90 transition break-words">
-                      info@bestquotecommercialfinance.com
-                    </a>
-                  </div>
-
-                  {/* Business Hours */}
-                  <div>
-                    <p className="text-white/70 text-sm mb-2">Business Hours</p>
-                    <p className="text-lg">Monday - Friday</p>
-                    <p className="text-lg">9:00 AM - 5:30 PM</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Form - Right Column */}
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
-
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <input
                         type="text"
@@ -209,57 +167,56 @@ export default function BuyToLetPage() {
                         placeholder="Last Name *"
                       />
                     </div>
-                  </div>
 
-                  <div>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-                      placeholder="Email *"
-                    />
-                  </div>
+                    <div>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+                        placeholder="Email *"
+                      />
+                    </div>
 
-                  <div>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={5}
-                      className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent resize-none"
-                      placeholder="Your message..."
-                    />
-                  </div>
+                    <div>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={4}
+                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent resize-none"
+                        placeholder="Your message..."
+                      />
+                    </div>
 
-                  <div className="flex items-start">
-                    <input
-                      type="checkbox"
-                      id="agreeToUpdates"
-                      name="agreeToUpdates"
-                      checked={formData.agreeToUpdates}
-                      onChange={handleChange}
-                      required
-                      className="mt-1 h-4 w-4 rounded border-white/20 cursor-pointer"
-                    />
-                    <label htmlFor="agreeToUpdates" className="ml-3 text-sm text-white/90">
-                      I agree to receive updates about Buy to Let HMO & MUFB products. <Link href="#privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>
-                    </label>
-                  </div>
+                    <div className="flex items-start">
+                      <input
+                        type="checkbox"
+                        id="agreeToUpdates"
+                        name="agreeToUpdates"
+                        checked={formData.agreeToUpdates}
+                        onChange={handleChange}
+                        required
+                        className="mt-1 h-4 w-4 rounded border-white/20 cursor-pointer"
+                      />
+                      <label htmlFor="agreeToUpdates" className="ml-3 text-xs text-white/90">
+                        I agree to receive updates about Buy to Let HMO & MUFB products. <Link href="#privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>
+                      </label>
+                    </div>
 
-                  <button
-                    type="submit"
-                    className="w-full bg-[#464f7f] hover:bg-[#464f7f]/80 text-white font-semibold py-4 rounded-lg transition-colors duration-300 text-lg cursor-pointer"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                    <button
+                      type="submit"
+                      className="w-full bg-[#2e3450] hover:bg-[#2e3450]/90 text-white font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </section>
