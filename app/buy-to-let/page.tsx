@@ -52,9 +52,9 @@ export default function BuyToLetPage() {
         {/* Main Content Section - Two Column Layout */}
         <section className="py-12 bg-[#2e3450]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Left Column - Images and Text Content */}
-              <div className="lg:col-span-2 space-y-6">
+              <div className="space-y-6">
                 {/* Images Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white rounded-lg overflow-hidden shadow-lg">
@@ -138,7 +138,7 @@ export default function BuyToLetPage() {
               </div>
 
               {/* Right Column - Contact Form */}
-              <div className="lg:col-span-1">
+              <div>
                 <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-[200px] lg:top-[260px]">
                   <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
 
