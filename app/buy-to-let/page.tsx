@@ -49,44 +49,45 @@ export default function BuyToLetPage() {
           imagePath="/hmo-hero.jpg"
         />
 
-        {/* Main Content Section - Three Column Layout */}
+        {/* Main Content Section - Two Column Layout */}
         <section className="py-12 bg-[#2e3450]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-              {/* Left Column - Images */}
-              <div className="lg:col-span-3 space-y-4">
-                <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src="/hmo-1.jpg"
-                    alt="HMO Property 1"
-                    width={300}
-                    height={200}
-                    className="w-full h-48 object-cover"
-                  />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Left Column - Images and Text Content */}
+              <div className="lg:col-span-2 space-y-6">
+                {/* Images Row */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/hmo-1.jpg"
+                      alt="HMO Property 1"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/hmo-2.jpg"
+                      alt="HMO Property 2"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/mufb.png"
+                      alt="MUFB Property"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
                 </div>
-                <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src="/hmo-2.jpg"
-                    alt="HMO Property 2"
-                    width={300}
-                    height={200}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-                <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src="/mufb.png"
-                    alt="MUFB Property"
-                    width={300}
-                    height={200}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
 
-              {/* Middle Column - Text Content */}
-              <div className="lg:col-span-5">
-                <div className="bg-white rounded-lg p-8 shadow-lg h-full">
+                {/* Text Content */}
+                <div className="bg-white rounded-lg p-8 shadow-lg">
                   <div className="mb-8">
                     <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
                       House of Multiple Occupancy (HMO)
@@ -137,7 +138,7 @@ export default function BuyToLetPage() {
               </div>
 
               {/* Right Column - Contact Form */}
-              <div className="lg:col-span-4">
+              <div className="lg:col-span-1">
                 <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-[200px] lg:top-[260px]">
                   <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
 
