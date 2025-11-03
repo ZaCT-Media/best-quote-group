@@ -90,6 +90,31 @@ export default function BuyToLetPage() {
                 <div className="bg-white rounded-lg p-8 shadow-lg">
                   <div className="mb-8">
                     <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
+                      Buy-to-Let (BTL) Mortgages
+                    </h2>
+                    <div className="text-gray-700 space-y-4">
+                      <p>
+                        A BTL (Buy-to-Let) mortgage is a type of loan specifically designed for purchasing property that you intend to rent out to tenants, rather than live in yourself. It&apos;s an investment mortgage for landlords and property investors.
+                      </p>
+
+                      <h3 className="text-lg font-semibold text-[#2e3450] mt-4">Key Characteristics:</h3>
+                      <ul className="list-disc pl-6 space-y-1 text-sm">
+                        <li>Higher deposits: Typically require 20-25% deposit minimum, often more than standard residential mortgages</li>
+                        <li>Interest rates: Usually higher than owner-occupier mortgages, reflecting the increased risk lenders perceive with rental properties</li>
+                        <li>Rental yield requirements: Lenders typically want the expected rental income to be 125-145% of the monthly mortgage payment to ensure the property can cover costs</li>
+                        <li>Stricter lending criteria: More stringent income verification and credit checks, as lenders view buy-to-let as higher risk</li>
+                        <li>Tax implications: Rental income is taxable, and there are specific rules around mortgage interest relief for landlords</li>
+                        <li>Different regulations: BTL mortgages aren&apos;t covered by the same consumer protections as residential mortgages and may have different early repayment charges</li>
+                      </ul>
+
+                      <p className="text-sm">
+                        BTL mortgages became popular during property booms as a way for individuals to build property portfolios, though recent tax changes and regulations have made them less attractive than they once were. They&apos;re commonly used by both individual investors and those looking to supplement their retirement income through rental yields.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="border-t pt-6 mb-8">
+                    <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
                       House of Multiple Occupancy (HMO)
                     </h2>
                     <div className="text-gray-700 space-y-4">
@@ -107,11 +132,15 @@ export default function BuyToLetPage() {
 
                       <h3 className="text-lg font-semibold text-[#2e3450] mt-4">Common Types:</h3>
                       <ul className="list-disc pl-6 space-y-1 text-sm">
-                        <li>Student accommodation with individual bedrooms</li>
+                        <li>Student accommodation with individual bedrooms and shared facilities</li>
                         <li>Bedsits or studio flats within a converted house</li>
-                        <li>Shared houses where professionals rent rooms</li>
-                        <li>Converted properties split into multiple units</li>
+                        <li>Shared houses where professionals rent individual rooms</li>
+                        <li>Converted properties split into multiple living units</li>
                       </ul>
+
+                      <p className="text-sm">
+                        HMOs are subject to specific regulations and licensing requirements, particularly for larger properties (typically 5+ occupants). These cover fire safety, space standards, amenities, and management standards to ensure tenant welfare. HMOs provide affordable housing options, particularly in areas with high property prices, and are popular among students, young professionals, and others seeking flexible, lower-cost accommodation.
+                      </p>
                     </div>
                   </div>
 
@@ -121,16 +150,16 @@ export default function BuyToLetPage() {
                     </h2>
                     <div className="text-gray-700 space-y-4">
                       <p>
-                        Multi-unit freehold blocks (MUFBs) are singular freehold buildings that contain multiple self-contained units. A typical example is a tower block with multiple flats.
-                      </p>
-                      <p>
-                        Each unit can have its own entrance, kitchen, and bedrooms, with shared areas among residents such as hallways and outdoor spaces.
+                        Multi-unit freehold blocks (MUFBs) are singular freehold buildings that contain multiple self-contained units. A typical example is a tower block with multiple flats. Each one of these units can have its own entrance, kitchen, and bedrooms etc. But, there will be certain shared areas among the residents, such as hallways and outdoor spaces.
                       </p>
                       <p>
                         The tenants in each unit will have their own Assured Shorthold Tenancy (AST), although an MUFB itself will be a single freehold property.
                       </p>
                       <p>
-                        Given the variation involved, an MUFB could have as few as two flats, or several hundred, depending on the size and scale of the asset.
+                        While tower blocks are what many think of when they picture MUFBs, they can actually take on other forms. Multiple houses or rows of houses on one freehold, and houses converted into flats can also be MUFBs.
+                      </p>
+                      <p>
+                        Given the variation involved, an MUFB could have as few as two flats, or several hundred, depending on the size and scale of the asset. It should be noted that, despite also being able to house multiple tenants, there are some key differences between MUFBs and HMOs.
                       </p>
                     </div>
                   </div>

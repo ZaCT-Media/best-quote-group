@@ -82,49 +82,49 @@ export default function Header() {
                       className="absolute top-full right-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
                     >
                       <Link
-                        href="#business-loans"
+                        href="/business-loans"
                         className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
                         onClick={() => setDesktopServicesOpen(false)}
                       >
                         Business Loans
                       </Link>
                       <Link
-                        href="#commercial-mortgages"
+                        href="/commercial-mortgages"
                         className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
                         onClick={() => setDesktopServicesOpen(false)}
                       >
                         Commercial Mortgages
                       </Link>
                       <Link
-                        href="#buy-to-let"
+                        href="/buy-to-let"
                         className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
                         onClick={() => setDesktopServicesOpen(false)}
                       >
                         Buy to Let HMO/MUFB
                       </Link>
                       <Link
-                        href="#development-finance"
+                        href="/development-finance"
                         className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
                         onClick={() => setDesktopServicesOpen(false)}
                       >
                         Development Finance
                       </Link>
                       <Link
-                        href="#bridging-loans"
+                        href="/bridging-loans"
                         className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
                         onClick={() => setDesktopServicesOpen(false)}
                       >
                         Bridging Loans
                       </Link>
                       <Link
-                        href="#asset-finance"
+                        href="/asset-finance"
                         className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
                         onClick={() => setDesktopServicesOpen(false)}
                       >
                         Asset Finance
                       </Link>
                       <Link
-                        href="#business-consultancy"
+                        href="/business-consultancy"
                         className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
                         onClick={() => setDesktopServicesOpen(false)}
                       >
@@ -208,49 +208,49 @@ export default function Header() {
                     {servicesOpen && (
                       <div className="pb-2 ml-4 space-y-1 bg-gray-50">
                         <Link
-                          href="#business-loans"
+                          href="/business-loans"
                           className="block px-4 py-3 text-gray-600 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Business Loans
                         </Link>
                         <Link
-                          href="#commercial-mortgages"
+                          href="/commercial-mortgages"
                           className="block px-4 py-3 text-gray-600 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Commercial Mortgages
                         </Link>
                         <Link
-                          href="#buy-to-let"
+                          href="/buy-to-let"
                           className="block px-4 py-3 text-gray-600 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Buy to Let HMO/MUFB
                         </Link>
                         <Link
-                          href="#development-finance"
+                          href="/development-finance"
                           className="block px-4 py-3 text-gray-600 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Development Finance
                         </Link>
                         <Link
-                          href="#bridging-loans"
+                          href="/bridging-loans"
                           className="block px-4 py-3 text-gray-600 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Bridging Loans
                         </Link>
                         <Link
-                          href="#asset-finance"
+                          href="/asset-finance"
                           className="block px-4 py-3 text-gray-600 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Asset Finance
                         </Link>
                         <Link
-                          href="#business-consultancy"
+                          href="/business-consultancy"
                           className="block px-4 py-3 text-gray-600 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
