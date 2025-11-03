@@ -75,7 +75,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden py-4 sm:py-6 lg:py-8 bg-[#2e3450]">
+    <section className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden py-4 sm:py-6 lg:py-8 bg-gray-700">
       {/* Content Container */}
       <div className="relative w-full max-w-7xl mx-auto min-h-[400px] md:min-h-[500px]">
         {/* Carousel Images */}
@@ -88,14 +88,14 @@ export default function Hero() {
               }`}
             >
               {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2e3450]/80 via-[#464f7f]/70 to-[#464f7f]/60 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 via-gray-800/40 to-gray-700/30 z-10"></div>
 
               {/* Background image */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
                   backgroundImage: `url('${slide.image}')`,
-                  backgroundColor: '#2e3450'
+                  backgroundColor: '#374151'
                 }}
               />
             </div>
