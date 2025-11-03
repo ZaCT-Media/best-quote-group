@@ -10,7 +10,7 @@ export default function Header() {
   const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <div className="sticky top-0 z-50">
       {/* Mobile Phone Banner */}
       <div className="lg:hidden bg-[#464f7f] text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

@@ -13,7 +13,7 @@ export default function MaintenancePage({ title, serviceName }: MaintenancePageP
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 mt-[140px] lg:mt-[200px]">
+      <main className="flex-1">
         {/* Maintenance Section */}
         <section className="py-20 bg-[#2e3450]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

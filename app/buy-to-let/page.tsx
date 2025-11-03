@@ -42,7 +42,7 @@ export default function BuyToLetPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 mt-[140px] lg:mt-[200px]">
+      <main className="flex-1">
         <ServiceHero
           title="Buy to Let HMO & MUFB Finance"
           subtitle="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do"
@@ -168,7 +168,7 @@ export default function BuyToLetPage() {
 
               {/* Right Column - Contact Form */}
               <div>
-                <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-[200px] lg:top-[260px]">
+                <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-4">
                   <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
