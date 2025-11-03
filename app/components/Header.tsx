@@ -35,7 +35,7 @@ export default function Header() {
                   alt="BestQuote Commercial Finance"
                   width={500}
                   height={200}
-                  className="h-24 sm:h-28 lg:h-32 w-auto cursor-pointer"
+                  className="h-28 sm:h-32 lg:h-36 w-auto cursor-pointer"
                   priority
                 />
               </Link>
