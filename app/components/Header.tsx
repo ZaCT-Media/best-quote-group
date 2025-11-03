@@ -31,11 +31,11 @@ export default function Header() {
             <div className="flex-shrink-0">
               <Link href="/">
                 <Image
-                  src="/logo-2.jpg"
+                  src="/logo-3.jpeg"
                   alt="BestQuote Commercial Finance"
                   width={500}
                   height={200}
-                  className="h-16 sm:h-20 lg:h-20 w-auto cursor-pointer"
+                  className="h-24 sm:h-28 lg:h-32 w-auto cursor-pointer"
                   priority
                 />
               </Link>
