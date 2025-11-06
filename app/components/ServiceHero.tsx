@@ -2,9 +2,10 @@ interface ServiceHeroProps {
   title: string;
   subtitle?: string;
   imagePath: string;
+  objectFit?: 'cover' | 'contain';
 }
 
-export default function ServiceHero({ title, subtitle, imagePath }: ServiceHeroProps) {
+export default function ServiceHero({ title, subtitle, imagePath, objectFit = 'cover' }: ServiceHeroProps) {
   return (
     <section className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -17,8 +18,8 @@ export default function ServiceHero({ title, subtitle, imagePath }: ServiceHeroP
           className="absolute inset-0"
           style={{
             backgroundImage: `url('${imagePath}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 80%',
+            backgroundSize: objectFit,
+            backgroundPosition: objectFit === 'contain' ? 'center' : 'center 80%',
             backgroundRepeat: 'no-repeat',
             backgroundColor: '#2e3450'
           }}

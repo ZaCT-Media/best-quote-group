@@ -75,7 +75,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden py-4 sm:py-6 lg:py-8">
+    <section className="relative min-h-[400px] md:min-h-[500px] bg-white flex items-center justify-center overflow-hidden py-4 sm:py-6 lg:py-8">
       {/* Content Container */}
       <div className="relative w-full max-w-7xl mx-auto min-h-[400px] md:min-h-[500px]">
         {/* Carousel Images */}

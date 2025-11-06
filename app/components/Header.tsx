@@ -7,7 +7,6 @@ import { useState } from 'react';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
 
   return (
     <div className="sticky top-0 z-50">
@@ -24,7 +23,7 @@ export default function Header() {
       </div>
 
       <header className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-6 relative">
           {/* Top Header */}
           <div className="flex justify-between items-center py-3 lg:py-4">
             {/* Logo */}
@@ -56,84 +55,6 @@ export default function Header() {
                 <Link href="#how-we-work" className="hover:text-[#464f7f] transition cursor-pointer">
                   HOW WE WORK
                 </Link>
-                <span className="text-gray-300">|</span>
-
-                {/* Services Dropdown - Desktop */}
-                <div className="relative">
-                  <button
-                    onClick={() => setDesktopServicesOpen(!desktopServicesOpen)}
-                    onMouseEnter={() => setDesktopServicesOpen(true)}
-                    className="flex items-center space-x-1 hover:text-[#464f7f] transition cursor-pointer"
-                  >
-                    <span>SERVICES</span>
-                    <svg
-                      className={`w-4 h-4 transition-transform ${desktopServicesOpen ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-
-                  {desktopServicesOpen && (
-                    <div
-                      onMouseLeave={() => setDesktopServicesOpen(false)}
-                      className="absolute top-full right-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
-                    >
-                      <Link
-                        href="/business-loans"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
-                        onClick={() => setDesktopServicesOpen(false)}
-                      >
-                        Business Loans
-                      </Link>
-                      <Link
-                        href="/commercial-mortgages"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
-                        onClick={() => setDesktopServicesOpen(false)}
-                      >
-                        Commercial Mortgages
-                      </Link>
-                      <Link
-                        href="/buy-to-let"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
-                        onClick={() => setDesktopServicesOpen(false)}
-                      >
-                        Buy to Let HMO/MUFB
-                      </Link>
-                      <Link
-                        href="/development-finance"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
-                        onClick={() => setDesktopServicesOpen(false)}
-                      >
-                        Development Finance
-                      </Link>
-                      <Link
-                        href="/bridging-loans"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
-                        onClick={() => setDesktopServicesOpen(false)}
-                      >
-                        Bridging Loans
-                      </Link>
-                      <Link
-                        href="/asset-finance"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
-                        onClick={() => setDesktopServicesOpen(false)}
-                      >
-                        Asset Finance
-                      </Link>
-                      <Link
-                        href="/business-consultancy"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#464f7f] hover:text-white transition cursor-pointer"
-                        onClick={() => setDesktopServicesOpen(false)}
-                      >
-                        Business Consultancy
-                      </Link>
-                    </div>
-                  )}
-                </div>
-
                 <span className="text-gray-300">|</span>
                 <Link href="#contact" className="hover:text-[#464f7f] transition cursor-pointer">
                   CONTACT US
@@ -250,11 +171,11 @@ export default function Header() {
                           Asset Finance
                         </Link>
                         <Link
-                          href="/business-consultancy"
+                          href="/business-services"
                           className="block px-4 py-3 text-gray-600 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          Business Consultancy
+                          Business Services
                         </Link>
                       </div>
                     )}
@@ -271,6 +192,19 @@ export default function Header() {
               </div>
             </nav>
         )}
+
+          {/* Bottom Navigation Bar - Desktop */}
+          <nav className="hidden lg:block bg-[#464f7f] rounded-full px-8 py-3">
+            <ul className="flex justify-between items-center text-white text-sm font-medium">
+              <li><Link href="/business-loans" className="hover:text-gray-200 transition cursor-pointer">Business Loans</Link></li>
+              <li><Link href="/commercial-mortgages" className="hover:text-gray-200 transition cursor-pointer">Commercial Mortgages</Link></li>
+              <li><Link href="/buy-to-let" className="hover:text-gray-200 transition cursor-pointer">Buy to Lets HMO/MUFB</Link></li>
+              <li><Link href="/development-finance" className="hover:text-gray-200 transition cursor-pointer">Development Finance</Link></li>
+              <li><Link href="/bridging-loans" className="hover:text-gray-200 transition cursor-pointer">Bridging Loans</Link></li>
+              <li><Link href="/asset-finance" className="hover:text-gray-200 transition cursor-pointer">Asset Finance</Link></li>
+              <li><Link href="/business-services" className="hover:text-gray-200 transition cursor-pointer">Business Services</Link></li>
+            </ul>
+          </nav>
         </div>
       </header>
     </div>

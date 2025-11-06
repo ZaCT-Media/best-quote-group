@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import ServiceHero from '../components/ServiceHero';
 import Footer from '../components/Footer';
 
-export default function BusinessLoansPage() {
+export default function BusinessServicesPage() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -43,9 +43,10 @@ export default function BusinessLoansPage() {
       <Header />
       <main className="flex-1">
         <ServiceHero
-          title="Business Loans"
-          subtitle="Flexible financing solutions to help your business grow and thrive"
-          imagePath="/business-loans-hero.jpg"
+          title="Business Services"
+          subtitle="Comprehensive professional services to support your property development and business needs"
+          imagePath="/business-services-hero.jpg"
+          objectFit="contain"
         />
 
         {/* Main Content Section - Two Column Layout */}
@@ -57,68 +58,68 @@ export default function BusinessLoansPage() {
                 {/* Text Content */}
                 <div className="bg-white rounded-lg p-8 shadow-lg">
                   <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
-                    Types of Business Loans
+                    Our Business Services
                   </h2>
                   <div className="text-gray-700 space-y-4">
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Secured Loans</h3>
-                      <p className="text-sm">
-                        This type of loan requires you to provide an asset, such as property, equipment, or company shares, as collateral. This lowers the risk for the lender, which can result in more competitive interest rates and larger borrowing amounts. However, you risk losing the asset if you default on the loan.
-                      </p>
-                    </div>
+                    <p className="text-sm mb-6">
+                      We provide a comprehensive range of professional services to support your business and property development projects from conception through to completion.
+                    </p>
 
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Unsecured Loans</h3>
-                      <p className="text-sm">
-                        These loans do not require collateral. They are generally available for smaller sums and come with higher interest rates to compensate the lender for the increased risk. For limited companies, lenders may require a personal guarantee, making you personally liable if the business cannot repay the loan.
-                      </p>
-                    </div>
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Architectural Services</h3>
+                        <p className="text-sm">
+                          From initial idea through to plan design. Our architectural team can help bring your vision to life with professional design services tailored to your project requirements.
+                        </p>
+                      </div>
 
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Start-up Loans</h3>
-                      <p className="text-sm">
-                        Designed for new businesses that have been trading for less than 36 months, these can be unsecured and are often government-backed, such as the UK&apos;s Start Up Loans scheme. The amount is typically capped at £25,000.
-                      </p>
-                    </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Planning Permission</h3>
+                        <p className="text-sm">
+                          We can help and advice on all aspects of planning permission, from initial plan through to approval. Navigate the complexities of planning regulations with expert guidance.
+                        </p>
+                      </div>
 
-                    <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">Eligibility Requirements</h3>
-                      <p className="text-sm mb-4">Lenders use various criteria to assess your eligibility:</p>
+                      <div>
+                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Quantity Surveying</h3>
+                        <p className="text-sm">
+                          Managing projects estimates, costings and contracts. Our quantity surveying services ensure your project stays on budget and meets financial objectives.
+                        </p>
+                      </div>
 
-                      <div className="space-y-3">
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">Age and Residency</h4>
-                          <p className="text-sm">You generally must be at least 18 years old and a resident of the country where you are applying.</p>
-                        </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Buildings Control</h3>
+                        <p className="text-sm">
+                          Plan submission, inspection and final completion. We manage the building control process to ensure compliance with regulations and standards.
+                        </p>
+                      </div>
 
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">Business History</h4>
-                          <p className="text-sm">Many lenders require a minimum trading history, often at least two years, but some specialize in loans for new businesses.</p>
-                        </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Building Warranties</h3>
+                        <p className="text-sm">
+                          Lender required 10 year insurance policies against structural defects in new or converted properties due to faulty design, workmanship, or materials. Protect your investment with comprehensive warranty coverage.
+                        </p>
+                      </div>
 
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">Affordability</h4>
-                          <p className="text-sm">You will need to demonstrate that your business can comfortably afford the monthly loan repayments.</p>
-                        </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Commercial Leases</h3>
+                        <p className="text-sm">
+                          Lease generation and legal process to protect both landlord and tenant. We facilitate fair and comprehensive lease agreements for commercial properties.
+                        </p>
+                      </div>
 
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">Creditworthiness</h4>
-                          <p className="text-sm">Your personal and business credit scores will be checked. A good credit record is an important factor in securing a loan.</p>
-                        </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Legal Services</h3>
+                        <p className="text-sm">
+                          Commercial Litigation. Expert legal support for commercial disputes and business-related legal matters.
+                        </p>
                       </div>
                     </div>
 
                     <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">When to Use a Business Loan</h3>
-                      <p className="text-sm mb-3">A business loan can be used for a wide variety of purposes:</p>
-
-                      <ul className="list-disc pl-6 space-y-2 text-sm">
-                        <li>Covering day-to-day running costs and boosting cash flow</li>
-                        <li>Purchasing new equipment, vehicles, or inventory</li>
-                        <li>Funding expansion into new markets or acquiring another business</li>
-                        <li>Renovating or building new business premises</li>
-                        <li>Consolidating existing debt into a single, more manageable payment</li>
-                      </ul>
+                      <p className="text-sm font-semibold">
+                        Get in touch to discuss how our business services can support your next project.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -192,7 +193,7 @@ export default function BusinessLoansPage() {
                         className="mt-1 h-4 w-4 rounded border-white/20 cursor-pointer"
                       />
                       <label htmlFor="agreeToUpdates" className="ml-3 text-xs text-white/90">
-                        I agree to receive updates about Business Loan products. <Link href="#privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>
+                        I agree to receive updates about Business Services. <Link href="#privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>
                       </label>
                     </div>
 
