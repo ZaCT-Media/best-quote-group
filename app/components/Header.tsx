@@ -44,6 +44,10 @@ export default function Header() {
             <div className="flex flex-col items-end justify-center lg:space-y-3">
               {/* Top Navigation - Desktop */}
               <nav className="hidden lg:flex items-center space-x-4 text-sm text-gray-600">
+                <Link href="/" className="hover:text-[#464f7f] transition cursor-pointer">
+                  HOME
+                </Link>
+                <span className="text-gray-300">|</span>
                 <Link href="#about" className="hover:text-[#464f7f] transition cursor-pointer">
                   ABOUT US
                 </Link>
@@ -88,6 +92,13 @@ export default function Header() {
               <div className="p-6">
 
                 <div className="space-y-1">
+                  <Link
+                    href="/"
+                    className="block px-4 py-4 text-lg text-gray-700 hover:bg-[#464f7f] hover:text-white rounded-lg border-b border-gray-200 cursor-pointer transition-all duration-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
                   <Link
                     href="#about"
                     className="block px-4 py-4 text-lg text-gray-700 hover:bg-[#464f7f] hover:text-white rounded-lg border-b border-gray-200 cursor-pointer transition-all duration-200"
