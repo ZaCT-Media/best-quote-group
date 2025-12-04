@@ -61,7 +61,7 @@ export default function BridgingLoansPage() {
                   </h2>
                   <div className="text-gray-700 space-y-4">
                     <p className="text-sm">
-                      A bridging loan is a short-term, secured loan used to cover a temporary financial gap, most often to "bridge" the time between buying a new property before selling an existing one. These loans are typically secured against an asset like property, and because they are arranged quickly, they can be more expensive than long-term loans. They are used when speed is essential and funds are needed to complete a transaction.
+                      A bridging loan is a short-term, secured loan used to cover a temporary financial gap, most often to &quot;bridge&quot; the time between buying a new property before selling an existing one. These loans are typically secured against an asset like property, and because they are arranged quickly, they can be more expensive than long-term loans. They are used when speed is essential and funds are needed to complete a transaction.
                     </p>
 
                     <div className="border-t pt-6 mt-6">
