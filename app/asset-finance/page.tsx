@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/Header';
 import ServiceHero from '../components/ServiceHero';
@@ -45,18 +46,49 @@ export default function AssetFinancePage() {
         <ServiceHero
           title="Asset Finance"
           subtitle="Acquire essential equipment and machinery with flexible financing solutions"
-          imagePath="/hmo-hero.jpg"
+          imagePath="/asset-finance-hero.jpg"
         />
 
         {/* Main Content Section - Two Column Layout */}
-        <section className="py-12 bg-[#2e3450]">
+        <section className="py-12 bg-[#1e3f6a]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Left Column - Content */}
               <div className="space-y-6">
+                {/* Images Row */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/machinery-finance.jpg"
+                      alt="Machinery Finance"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/lorry.jpg"
+                      alt="Vehicle Finance"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/crawler-crane.jpg"
+                      alt="Construction Equipment Finance"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                </div>
+
                 {/* Text Content */}
                 <div className="bg-white rounded-lg p-8 shadow-lg">
-                  <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
+                  <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
                     What is Asset Finance?
                   </h2>
                   <div className="text-gray-700 space-y-4">
@@ -68,33 +100,7 @@ export default function AssetFinancePage() {
                     </p>
 
                     <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">How Asset Finance Works</h3>
-
-                      <div className="space-y-4">
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">1. Acquiring Assets</h4>
-                          <p className="text-sm">A lender or lessor provides funds or the asset itself to a business to acquire new or used equipment, vehicles, machinery, or other capital goods.</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">2. Collateral</h4>
-                          <p className="text-sm">The asset being financed serves as security for the loan, reducing the lender&apos;s risk and potentially leading to lower interest rates.</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">3. Repayment</h4>
-                          <p className="text-sm">The business repays the loan or lease in regular instalments over a set period, often with interest, making the purchase more manageable.</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">4. Ownership</h4>
-                          <p className="text-sm">At the end of the agreed term, the business typically owns the asset outright.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">Benefits of Asset Finance</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-4">Benefits of Asset Finance</h3>
 
                       <ul className="list-disc pl-6 space-y-2 text-sm">
                         <li><strong>Preserves Cash Flow:</strong> Spreading costs over time prevents a large upfront outlay, protecting your business&apos;s capital for other essential expenses.</li>
@@ -105,7 +111,7 @@ export default function AssetFinancePage() {
                     </div>
 
                     <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">Common Types of Asset Finance</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-4">Common Types of Asset Finance</h3>
 
                       <ul className="list-disc pl-6 space-y-2 text-sm">
                         <li><strong>Hire Purchase:</strong> You pay a deposit and then make regular payments, owning the asset at the end of the term.</li>
@@ -119,8 +125,8 @@ export default function AssetFinancePage() {
 
               {/* Right Column - Contact Form */}
               <div>
-                <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-4">
-                  <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
+                <div className="bg-[#1e3f6a] rounded-lg p-6 shadow-lg sticky top-4 lg:top-[240px]">
+                  <h3 className="text-xl font-bold text-white mb-6">Contact us for information on Asset Finance</h3>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
@@ -191,7 +197,7 @@ export default function AssetFinancePage() {
 
                     <button
                       type="submit"
-                      className="w-full bg-[#2e3450] hover:bg-[#2e3450]/90 text-white font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
+                      className="w-full bg-white hover:bg-gray-100 text-[#1e3f6a] font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
                     >
                       Send Message
                     </button>

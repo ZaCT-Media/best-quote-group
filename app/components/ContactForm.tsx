@@ -61,7 +61,7 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#464f7f] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent"
                   placeholder="John"
                 />
               </div>
@@ -78,7 +78,7 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#464f7f] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent"
                   placeholder="Smith"
                 />
               </div>
@@ -96,7 +96,7 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#464f7f] focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent"
                 placeholder="john.smith@example.com"
               />
             </div>
@@ -110,11 +110,11 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
                 checked={formData.agreeToUpdates}
                 onChange={handleChange}
                 required
-                className="mt-1 h-5 w-5 text-[#464f7f] border-gray-300 rounded focus:ring-[#464f7f]"
+                className="mt-1 h-5 w-5 text-[#1e3f6a] border-gray-300 rounded focus:ring-[#1e3f6a]"
               />
               <label htmlFor="agreeToUpdates" className="ml-3 text-sm text-gray-700">
                 I agree to receive communication updates about Best Quote Commercial Finance&apos;s {serviceName} products and services.{' '}
-                <Link href="#privacy-policy" className="text-[#464f7f] hover:text-[#2e3450] underline">
+                <Link href="#privacy-policy" className="text-[#1e3f6a] hover:text-[#1e3f6a] underline">
                   Privacy Policy
                 </Link>
                 <span className="text-red-500"> *</span>
@@ -125,7 +125,7 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
             <div>
               <button
                 type="submit"
-                className="w-full bg-[#464f7f] hover:bg-[#2e3450] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+                className="w-full bg-[#1e3f6a] hover:bg-[#1e3f6a] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
               >
                 Submit Enquiry
               </button>

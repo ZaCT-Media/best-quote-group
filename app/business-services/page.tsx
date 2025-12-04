@@ -50,14 +50,14 @@ export default function BusinessServicesPage() {
         />
 
         {/* Main Content Section - Two Column Layout */}
-        <section className="py-12 bg-[#2e3450]">
+        <section className="py-12 bg-[#1e3f6a]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Left Column - Content */}
               <div className="space-y-6">
                 {/* Text Content */}
                 <div className="bg-white rounded-lg p-8 shadow-lg">
-                  <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
+                  <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
                     Our Business Services
                   </h2>
                   <div className="text-gray-700 space-y-4">
@@ -67,49 +67,49 @@ export default function BusinessServicesPage() {
 
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Architectural Services</h3>
+                        <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Architectural Services</h3>
                         <p className="text-sm">
                           From initial idea through to plan design. Our architectural team can help bring your vision to life with professional design services tailored to your project requirements.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Planning Permission</h3>
+                        <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Planning Permission</h3>
                         <p className="text-sm">
                           We can help and advice on all aspects of planning permission, from initial plan through to approval. Navigate the complexities of planning regulations with expert guidance.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Quantity Surveying</h3>
+                        <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Quantity Surveying</h3>
                         <p className="text-sm">
                           Managing projects estimates, costings and contracts. Our quantity surveying services ensure your project stays on budget and meets financial objectives.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Buildings Control</h3>
+                        <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Buildings Control</h3>
                         <p className="text-sm">
                           Plan submission, inspection and final completion. We manage the building control process to ensure compliance with regulations and standards.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Building Warranties</h3>
+                        <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Building Warranties</h3>
                         <p className="text-sm">
                           Lender required 10 year insurance policies against structural defects in new or converted properties due to faulty design, workmanship, or materials. Protect your investment with comprehensive warranty coverage.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Commercial Leases</h3>
+                        <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Commercial Leases</h3>
                         <p className="text-sm">
                           Lease generation and legal process to protect both landlord and tenant. We facilitate fair and comprehensive lease agreements for commercial properties.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Legal Services</h3>
+                        <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Legal Services</h3>
                         <p className="text-sm">
                           Commercial Litigation. Expert legal support for commercial disputes and business-related legal matters.
                         </p>
@@ -127,7 +127,7 @@ export default function BusinessServicesPage() {
 
               {/* Right Column - Contact Form */}
               <div>
-                <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-4">
+                <div className="bg-[#1e3f6a] rounded-lg p-6 shadow-lg sticky top-4">
                   <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -199,7 +199,7 @@ export default function BusinessServicesPage() {
 
                     <button
                       type="submit"
-                      className="w-full bg-[#2e3450] hover:bg-[#2e3450]/90 text-white font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
+                      className="w-full bg-white hover:bg-gray-100 text-[#1e3f6a] font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
                     >
                       Send Message
                     </button>

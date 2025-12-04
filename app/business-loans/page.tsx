@@ -49,67 +49,40 @@ export default function BusinessLoansPage() {
         />
 
         {/* Main Content Section - Two Column Layout */}
-        <section className="py-12 bg-[#2e3450]">
+        <section className="py-12 bg-[#1e3f6a]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Left Column - Content */}
               <div className="space-y-6">
                 {/* Text Content */}
                 <div className="bg-white rounded-lg p-8 shadow-lg">
-                  <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
+                  <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
                     Types of Business Loans
                   </h2>
                   <div className="text-gray-700 space-y-4">
                     <div>
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Secured Loans</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Secured Loans</h3>
                       <p className="text-sm">
                         This type of loan requires you to provide an asset, such as property, equipment, or company shares, as collateral. This lowers the risk for the lender, which can result in more competitive interest rates and larger borrowing amounts. However, you risk losing the asset if you default on the loan.
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Unsecured Loans</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Unsecured Loans</h3>
                       <p className="text-sm">
                         These loans do not require collateral. They are generally available for smaller sums and come with higher interest rates to compensate the lender for the increased risk. For limited companies, lenders may require a personal guarantee, making you personally liable if the business cannot repay the loan.
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-2">Start-up Loans</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-2">Start-up Loans</h3>
                       <p className="text-sm">
                         Designed for new businesses that have been trading for less than 36 months, these can be unsecured and are often government-backed, such as the UK&apos;s Start Up Loans scheme. The amount is typically capped at £25,000.
                       </p>
                     </div>
 
                     <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">Eligibility Requirements</h3>
-                      <p className="text-sm mb-4">Lenders use various criteria to assess your eligibility:</p>
-
-                      <div className="space-y-3">
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">Age and Residency</h4>
-                          <p className="text-sm">You generally must be at least 18 years old and a resident of the country where you are applying.</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">Business History</h4>
-                          <p className="text-sm">Many lenders require a minimum trading history, often at least two years, but some specialize in loans for new businesses.</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">Affordability</h4>
-                          <p className="text-sm">You will need to demonstrate that your business can comfortably afford the monthly loan repayments.</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-[#2e3450]">Creditworthiness</h4>
-                          <p className="text-sm">Your personal and business credit scores will be checked. A good credit record is an important factor in securing a loan.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">When to Use a Business Loan</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-4">When to Use a Business Loan</h3>
                       <p className="text-sm mb-3">A business loan can be used for a wide variety of purposes:</p>
 
                       <ul className="list-disc pl-6 space-y-2 text-sm">
@@ -126,8 +99,8 @@ export default function BusinessLoansPage() {
 
               {/* Right Column - Contact Form */}
               <div>
-                <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-4">
-                  <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
+                <div className="bg-[#1e3f6a] rounded-lg p-6 shadow-lg sticky top-4 lg:top-[240px]">
+                  <h3 className="text-xl font-bold text-white mb-6">Contact us for information on Business Loans</h3>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
@@ -198,7 +171,7 @@ export default function BusinessLoansPage() {
 
                     <button
                       type="submit"
-                      className="w-full bg-[#2e3450] hover:bg-[#2e3450]/90 text-white font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
+                      className="w-full bg-white hover:bg-gray-100 text-[#1e3f6a] font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
                     >
                       Send Message
                     </button>

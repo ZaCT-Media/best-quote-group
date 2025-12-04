@@ -11,7 +11,7 @@ export default function ServiceHero({ title, subtitle, imagePath, objectFit = 'c
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2e3450]/80 via-[#464f7f]/70 to-[#464f7f]/60 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3f6a]/80 via-[#1e3f6a]/70 to-[#1e3f6a]/60 z-10"></div>
 
         {/* Background image */}
         <div

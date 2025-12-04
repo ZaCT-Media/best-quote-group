@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/Header';
 import ServiceHero from '../components/ServiceHero';
@@ -49,14 +50,45 @@ export default function DevelopmentFinancePage() {
         />
 
         {/* Main Content Section - Two Column Layout */}
-        <section className="py-12 bg-[#2e3450]">
+        <section className="py-12 bg-[#1e3f6a]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Left Column - Content */}
               <div className="space-y-6">
+                {/* Images Row */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/development-finance-1.jpg"
+                      alt="Development Finance 1"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/development-finance-2.jpg"
+                      alt="Refurbishment Finance"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/development-finance-3.jpg"
+                      alt="Building Regulations"
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                </div>
+
                 {/* Text Content */}
                 <div className="bg-white rounded-lg p-8 shadow-lg">
-                  <h2 className="text-2xl font-bold text-[#2e3450] mb-4">
+                  <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
                     What is Development Finance?
                   </h2>
                   <div className="text-gray-700 space-y-4">
@@ -65,40 +97,40 @@ export default function DevelopmentFinancePage() {
                     </p>
 
                     <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">How Development Finance Works</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-4">How Development Finance Works</h3>
 
                       <div className="space-y-4">
                         <div>
-                          <h4 className="font-semibold text-[#2e3450]">Land Acquisition</h4>
+                          <h4 className="font-semibold text-[#1e3f6a]">Land Acquisition</h4>
                           <p className="text-sm">Developers often need capital to purchase land or existing properties for development.</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-[#2e3450]">Construction Financing</h4>
+                          <h4 className="font-semibold text-[#1e3f6a]">Construction Financing</h4>
                           <p className="text-sm">Once the land is acquired, financing is required for the actual construction or renovation of buildings. This includes funding for materials, labor, contractors, and other construction-related expenses. Construction financing can be obtained through loans or other financing mechanisms.</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-[#2e3450]">Project Viability Assessment</h4>
+                          <h4 className="font-semibold text-[#1e3f6a]">Project Viability Assessment</h4>
                           <p className="text-sm">Lenders will ascertain the viability of the project by way of the costs of purchase, costs of development and the gross development value upon completion.</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-[#2e3450]">Exit Strategy</h4>
+                          <h4 className="font-semibold text-[#1e3f6a]">Exit Strategy</h4>
                           <p className="text-sm">Developers will need to plan for the forward event of clearing the development loan, either by way of refinancing or sale.</p>
                         </div>
                       </div>
                     </div>
 
                     <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">Our Expertise</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-4">Our Expertise</h3>
                       <p className="text-sm">
                         BestQuote Commercial also have a vast experience in all legal aspects and requirements of Development Finance, ensuring your project is supported every step of the way.
                       </p>
                     </div>
 
                     <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#2e3450] mb-4">What We Finance</h3>
+                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-4">What We Finance</h3>
 
                       <ul className="list-disc pl-6 space-y-2 text-sm">
                         <li>New build construction projects</li>
@@ -114,8 +146,8 @@ export default function DevelopmentFinancePage() {
 
               {/* Right Column - Contact Form */}
               <div>
-                <div className="bg-[#464f7f] rounded-lg p-6 shadow-lg sticky top-4">
-                  <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
+                <div className="bg-[#1e3f6a] rounded-lg p-6 shadow-lg sticky top-4 lg:top-[240px]">
+                  <h3 className="text-xl font-bold text-white mb-6">Contact us for information on Development Finance</h3>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
@@ -186,7 +218,7 @@ export default function DevelopmentFinancePage() {
 
                     <button
                       type="submit"
-                      className="w-full bg-[#2e3450] hover:bg-[#2e3450]/90 text-white font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
+                      className="w-full bg-white hover:bg-gray-100 text-[#1e3f6a] font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
                     >
                       Send Message
                     </button>

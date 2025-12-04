@@ -9,7 +9,7 @@ interface ServiceCardProps {
 function ServiceCard({ title, href, description }: ServiceCardProps) {
   return (
     <Link href={href} className="block h-full">
-      <div className="bg-gradient-to-br from-[#2e3450] to-[#464f7f] rounded-lg p-8 h-full flex flex-col justify-between shadow-lg hover:from-[#464f7f] hover:to-[#2e3450] transition-all duration-300 group cursor-pointer">
+      <div className="bg-gradient-to-br from-[#1e3f6a] to-[#1e3f6a] rounded-lg p-8 h-full flex flex-col justify-between shadow-lg hover:from-[#1e3f6a] hover:to-[#1e3f6a] transition-all duration-300 group cursor-pointer">
         <div>
           <h3 className="text-white text-xl font-semibold mb-3">{title}</h3>
           <p className="text-white/80 text-sm leading-relaxed">
@@ -62,7 +62,7 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50" id="services">
+    <section className="pt-8 pb-16 bg-gray-50" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
           Our Services

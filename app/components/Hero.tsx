@@ -134,7 +134,7 @@ export default function Hero() {
           </div>
           <a
             href={carouselSlides[currentIndex].link}
-            className="inline-block bg-[#464f7f] hover:bg-[#2e3450] text-white font-semibold px-10 py-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-base md:text-lg cursor-pointer pointer-events-auto"
+            className="inline-block bg-[#1e3f6a] hover:bg-[#1e3f6a] text-white font-semibold px-10 py-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-base md:text-lg cursor-pointer pointer-events-auto"
           >
             LEARN MORE
           </a>
