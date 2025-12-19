@@ -50,19 +50,19 @@ export default function Header() {
                   HOME
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link href="#about" className="hover:text-[#1e3f6a] transition cursor-pointer">
+                <Link href="/about-us" className="hover:text-[#1e3f6a] transition cursor-pointer">
                   ABOUT US
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link href="#what-we-do" className="hover:text-[#1e3f6a] transition cursor-pointer">
+                <Link href="/what-we-do" className="hover:text-[#1e3f6a] transition cursor-pointer">
                   WHAT WE DO
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link href="#how-we-work" className="hover:text-[#1e3f6a] transition cursor-pointer">
+                <Link href="/how-we-work" className="hover:text-[#1e3f6a] transition cursor-pointer">
                   HOW WE WORK
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link href="#contact" className="hover:text-[#1e3f6a] transition cursor-pointer">
+                <Link href="/contact-us" className="hover:text-[#1e3f6a] transition cursor-pointer">
                   CONTACT US
                 </Link>
               </nav>
@@ -102,21 +102,21 @@ export default function Header() {
                     Home
                   </Link>
                   <Link
-                    href="#about"
+                    href="/about-us"
                     className="block px-4 py-4 text-lg text-gray-700 hover:bg-[#1e3f6a] hover:text-white rounded-lg border-b border-gray-200 cursor-pointer transition-all duration-200"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     About Us
                   </Link>
                   <Link
-                    href="#what-we-do"
+                    href="/what-we-do"
                     className="block px-4 py-4 text-lg text-gray-700 hover:bg-[#1e3f6a] hover:text-white rounded-lg border-b border-gray-200 cursor-pointer transition-all duration-200"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     What We Do
                   </Link>
                   <Link
-                    href="#how-we-work"
+                    href="/how-we-work"
                     className="block px-4 py-4 text-lg text-gray-700 hover:bg-[#1e3f6a] hover:text-white rounded-lg border-b border-gray-200 cursor-pointer transition-all duration-200"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -195,7 +195,7 @@ export default function Header() {
                   </div>
 
                   <Link
-                    href="#contact"
+                    href="/contact-us"
                     className="block px-4 py-4 text-lg text-gray-700 hover:bg-[#464f7f] hover:text-white rounded-lg cursor-pointer transition-all duration-200"
                     onClick={() => setMobileMenuOpen(false)}
                   >

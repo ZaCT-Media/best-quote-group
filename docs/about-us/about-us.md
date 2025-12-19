@@ -1,0 +1,2 @@
+About Us - BestQuote Commercial Finance has over 30 years experience in the finance industry and specific to both Business financing and Asset backed lending.
+From initial market analysis to funds being released, we have a wealth of knowledge on how to obtain you the best rates and the quickest lending completions.

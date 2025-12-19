@@ -1,0 +1,2 @@
+1. create pages for @how-we-work.md @about-us.md and @what-we-do.md and link them to the existing nav bar links
+2. Add a whatsapp link in the bottom right of the screen to link to a whatsapp link form the data file
