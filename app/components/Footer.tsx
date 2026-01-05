@@ -37,7 +37,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="bg-[#1e3f6a] text-white px-8 py-3 rounded-lg hover:bg-[#1e3f6a] transition font-medium whitespace-nowrap"
+                className="bg-[#1e3f6a] text-white px-8 py-3 rounded-lg hover:bg-[#1e3f6a] transition font-medium whitespace-nowrap cursor-pointer"
               >
                 JOIN LIST
               </button>
@@ -49,32 +49,32 @@ export default function Footer() {
             <h3 className="text-gray-900 font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#commercial-mortgages" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/commercial-mortgages" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   Commercial Mortgages
                 </Link>
               </li>
               <li>
-                <Link href="#buy-to-lets" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/buy-to-let" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   Buy to Lets
                 </Link>
               </li>
               <li>
-                <Link href="#hmo" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/buy-to-let" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   HMO
                 </Link>
               </li>
               <li>
-                <Link href="#development-finance" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/development-finance" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   Development Finance
                 </Link>
               </li>
               <li>
-                <Link href="#bridging-loans" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/bridging-loans" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   Bridging Loans
                 </Link>
               </li>
               <li>
-                <Link href="#business-loans" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/business-loans" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   Business Loans
                 </Link>
               </li>
@@ -86,22 +86,22 @@ export default function Footer() {
             <h3 className="text-gray-900 font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#about-us" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/about-us" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#what-we-do" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/what-we-do" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   What We Do
                 </Link>
               </li>
               <li>
-                <Link href="#how-we-work" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/how-we-work" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   How We Work
                 </Link>
               </li>
               <li>
-                <Link href="#contact-us" className="text-gray-600 hover:text-[#1e3f6a] transition">
+                <Link href="/contact-us" className="text-gray-600 hover:text-[#1e3f6a] transition">
                   Contact Us
                 </Link>
               </li>
