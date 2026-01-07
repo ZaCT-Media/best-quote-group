@@ -10,7 +10,7 @@ const carouselSlides = [
     link: '/development-finance'
   },
   {
-    image: '/home/housing-foundations.jpg',
+    image: '/hmo-hero.jpg',
     title: 'Buy to Let HMO & MUFB',
     subtitle: 'Specialist mortgages for HMO and multi-unit freehold block investments',
     link: '/buy-to-let'
@@ -22,7 +22,7 @@ const carouselSlides = [
     link: '/asset-finance'
   },
   {
-    image: '/home/types-of-cnc-machines.webp',
+    image: '/business-loans-hero.jpg',
     title: 'Business Loans',
     subtitle: 'Flexible financing solutions to help your business grow and succeed',
     link: '/business-loans'

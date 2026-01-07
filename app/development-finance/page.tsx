@@ -46,7 +46,7 @@ export default function DevelopmentFinancePage() {
         <ServiceHero
           title="Development Finance"
           subtitle="Fund your property development projects with flexible financing solutions"
-          imagePath="/hmo-hero.jpg"
+          imagePath="/development-finance-hero.jpg"
         />
 
         {/* Main Content Section - Two Column Layout */}

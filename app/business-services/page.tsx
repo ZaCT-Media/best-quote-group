@@ -128,7 +128,7 @@ export default function BusinessServicesPage() {
               {/* Right Column - Contact Form */}
               <div>
                 <div className="bg-[#1e3f6a] rounded-lg p-6 shadow-lg sticky top-4">
-                  <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
+                  <h3 className="text-xl font-bold text-white mb-6">Contact us for information on Business Service</h3>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>

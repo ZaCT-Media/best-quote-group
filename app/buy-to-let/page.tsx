@@ -47,6 +47,7 @@ export default function BuyToLetPage() {
           title="Buy to Let HMO & MUFB Finance"
           subtitle="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do"
           imagePath="/hmo-hero.jpg"
+          backgroundPosition="center"
         />
 
         {/* Main Content Section - Two Column Layout */}

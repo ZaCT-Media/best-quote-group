@@ -45,7 +45,7 @@ export default function BridgingLoansPage() {
         <ServiceHero
           title="Bridging Loans"
           subtitle="Fast, flexible short-term financing to bridge your property transactions"
-          imagePath="/business-loans-hero.jpg"
+          imagePath="/bridging-loans-hero.jpg"
         />
 
         {/* Main Content Section - Two Column Layout */}

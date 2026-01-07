@@ -46,7 +46,8 @@ export default function CommercialMortgagesPage() {
         <ServiceHero
           title="Commercial Mortgages"
           subtitle="Financing solutions for business properties from £150k to £15m"
-          imagePath="/hmo-hero.jpg"
+          imagePath="/home/warehouse-outside.jpg"
+          backgroundPosition="center"
         />
 
         {/* Main Content Section - Two Column Layout */}
