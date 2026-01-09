@@ -31,32 +31,32 @@ export default function ServicesGrid() {
   const services = [
     {
       title: 'Business Loans',
-      href: '#business-loans',
+      href: '/business-loans',
       description: 'Flexible business loan solutions tailored to your needs. Get the funding you need to grow and expand your business operations.'
     },
     {
       title: 'Commercial Mortgages',
-      href: '#commercial-mortgages',
+      href: '/commercial-mortgages',
       description: 'Expand your business with our commercial mortgage options. Whether you\'re purchasing new premises or refinancing existing property, our bespoke solutions are designed to support your business growth.'
     },
     {
       title: 'Buy To Let Inc HMO and MUFB',
-      href: '#buy-to-let',
+      href: '/buy-to-let',
       description: 'Specialist finance for buy-to-let properties, Houses in Multiple Occupation (HMO), and Multi-Unit Freehold Blocks (MUFB) to maximise your property investment returns.'
     },
     {
       title: 'Bridging Loans',
-      href: '#bridging-loans',
+      href: '/bridging-loans',
       description: 'For those needing short-term finance solutions, our bridging loans offer quick access to funds. Ideal for property transactions or urgent financial needs, we provide fast, flexible solutions tailored to your situation.'
     },
     {
       title: 'Development Finance',
-      href: '#development-finance',
+      href: '/development-finance',
       description: 'Our development finance solutions are designed to support property developers and investors at every stage of their project. From initial land purchase to construction and final sale.'
     },
     {
       title: 'Asset Finance',
-      href: '#asset-finance',
+      href: '/asset-finance',
       description: 'Asset finance is a broad term for a range of financial products that allow businesses to acquire essential assets like machinery, vehicles, or equipment, rather than paying the full cost upfront.'
     },
   ];
