@@ -1,159 +1,199 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
-const carouselSlides = [
-  {
-    image: '/home/housing-development-drone.jpg',
-    title: 'Development Finance',
-    subtitle: 'Fund your property development projects with flexible financing solutions',
-    link: '/development-finance'
-  },
-  {
-    image: '/hmo-hero.jpg',
-    title: 'Buy to Let HMO & MUFB',
-    subtitle: 'Specialist mortgages for HMO and multi-unit freehold block investments',
-    link: '/buy-to-let'
-  },
-  {
-    image: '/home/industrial-cnc-machine.jpg',
-    title: 'Asset Finance',
-    subtitle: 'From printing machinery to plant - acquire the equipment your business needs',
-    link: '/asset-finance'
-  },
-  {
-    image: '/business-loans-hero.jpg',
-    title: 'Business Loans',
-    subtitle: 'Flexible financing solutions to help your business grow and succeed',
-    link: '/business-loans'
-  },
-  {
-    image: '/home/warehouse-outside.jpg',
-    title: 'Commercial Mortgages',
-    subtitle: 'Finance for offices, retail, industrial units, and more',
-    link: '/commercial-mortgages'
-  },
-];
+import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    agreeToUpdates: false,
+  });
 
-  // Auto-advance carousel every 5 seconds
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselSlides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, currentIndex]);
-
-  const handleManualNavigation = (newIndex: number) => {
-    setCurrentIndex(newIndex);
-    setIsAutoPlaying(false);
-
-    // Resume auto-play after 10 seconds of inactivity
-    setTimeout(() => {
-      setIsAutoPlaying(true);
-    }, 10000);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      agreeToUpdates: false,
+    });
   };
 
-  const goToSlide = (index: number) => {
-    handleManualNavigation(index);
-  };
-
-  const goToPrevious = () => {
-    const newIndex = currentIndex === 0 ? carouselSlides.length - 1 : currentIndex - 1;
-    handleManualNavigation(newIndex);
-  };
-
-  const goToNext = () => {
-    const newIndex = (currentIndex + 1) % carouselSlides.length;
-    handleManualNavigation(newIndex);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
   };
 
   return (
-    <section className="relative min-h-[400px] md:min-h-[500px] bg-white flex items-center justify-center overflow-hidden py-4 sm:py-6 lg:py-8">
-      {/* Content Container */}
-      <div className="relative w-full max-w-7xl mx-auto min-h-[400px] md:min-h-[500px]">
-        {/* Carousel Images */}
-        <div className="absolute inset-0 mx-4 sm:mx-6 lg:mx-8 rounded-lg overflow-hidden z-0 pointer-events-none">
-          {carouselSlides.map((slide, index) => (
-            <div
-              key={slide.image}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 via-gray-800/40 to-gray-700/30 z-10"></div>
+    <section className="relative bg-gradient-to-br from-[#1e3f6a] via-[#2a5186] to-[#1e3f6a] py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-              {/* Background image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{
-                  backgroundImage: `url('${slide.image}')`,
-                  backgroundColor: '#374151'
-                }}
-              />
+          {/* Left Column - Value Proposition */}
+          <div className="text-white space-y-6">
+            <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-2">
+              Trusted Commercial Finance Experts
             </div>
-          ))}
-        </div>
-        {/* Navigation Arrows */}
-        <button
-          onClick={goToPrevious}
-          className="absolute left-6 sm:left-10 lg:left-12 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-all duration-300 p-2 hover:bg-black/20 rounded-full cursor-pointer pointer-events-auto"
-          aria-label="Previous slide"
-        >
-          <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
 
-        <button
-          onClick={goToNext}
-          className="absolute right-6 sm:right-10 lg:right-12 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-all duration-300 p-2 hover:bg-black/20 rounded-full cursor-pointer pointer-events-auto"
-          aria-label="Next slide"
-        >
-          <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
-        {/* Content */}
-        <div className="relative z-20 text-center text-white py-20 md:py-32 px-4 sm:px-6 lg:px-8 pointer-events-none">
-          <div className="transition-opacity duration-500">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-bold mb-4 leading-tight max-w-4xl mx-auto">
-              {carouselSlides[currentIndex].title}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              Get Your Best Quote in{' '}
+              <span className="text-yellow-400">24 Hours</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl mb-8 text-white/90 max-w-3xl mx-auto">
-              {carouselSlides[currentIndex].subtitle}
-            </p>
-          </div>
-          <a
-            href={carouselSlides[currentIndex].link}
-            className="inline-block bg-[#1e3f6a] hover:bg-[#1e3f6a] text-white font-semibold px-10 py-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-base md:text-lg cursor-pointer pointer-events-auto"
-          >
-            LEARN MORE
-          </a>
-        </div>
 
-        {/* Carousel Indicators */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
-          {carouselSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer pointer-events-auto ${
-                index === currentIndex
-                  ? 'bg-white w-8'
-                  : 'bg-white/50 hover:bg-white/75'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+              Unlock the right financing solution for your business. From development finance to commercial mortgages, we deliver competitive rates and expert guidance tailored to your needs.
+            </p>
+
+            {/* Trust Indicators */}
+            <div className="space-y-3 pt-4">
+              <div className="flex items-start gap-3">
+                <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <div>
+                  <p className="font-semibold">No Obligation Consultation</p>
+                  <p className="text-white/80 text-sm">Free expert advice with zero commitment</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <div>
+                  <p className="font-semibold">Access to 100+ Lenders</p>
+                  <p className="text-white/80 text-sm">We compare the market to find your best rate</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <div>
+                  <p className="font-semibold">Fast Approval Process</p>
+                  <p className="text-white/80 text-sm">Quick decisions to keep your project moving</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Contact Form */}
+          <div className="relative">
+            <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+              {/* Urgency Badge */}
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold text-sm shadow-lg">
+                Get Your Quote Today
+              </div>
+
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mt-4 mb-2">
+                Start Your Application
+              </h2>
+              <p className="text-gray-600 text-center mb-6 text-sm">
+                Fill in your details and we&apos;ll get back to you within 24 hours
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent"
+                      placeholder="First Name *"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent"
+                      placeholder="Last Name *"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent"
+                    placeholder="Email Address *"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent"
+                    placeholder="Phone Number *"
+                  />
+                </div>
+
+                <div className="flex items-start gap-3 pt-2">
+                  <input
+                    type="checkbox"
+                    id="agreeToUpdates"
+                    name="agreeToUpdates"
+                    checked={formData.agreeToUpdates}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 h-4 w-4 rounded border-gray-300 text-[#1e3f6a] focus:ring-[#1e3f6a] cursor-pointer"
+                  />
+                  <label htmlFor="agreeToUpdates" className="text-xs text-gray-600">
+                    I agree to receive updates about Best Quote Commercial Finance products and services.{' '}
+                    <Link href="/privacy-policy" className="text-[#1e3f6a] underline hover:text-[#2a5186]">
+                      Privacy Policy
+                    </Link>
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-[#1e3f6a] hover:bg-[#2a5186] text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg cursor-pointer"
+                >
+                  Get My Free Quote
+                </button>
+
+                {/* Trust Signals */}
+                <div className="flex items-center justify-center gap-2 pt-2">
+                  <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  </svg>
+                  <p className="text-xs text-gray-500">
+                    Your information is secure and will never be shared
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

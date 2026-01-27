@@ -1,212 +1,113 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Header from '../components/Header';
 import ServiceHero from '../components/ServiceHero';
+import StickyContactForm from '../components/StickyContactForm';
 import Footer from '../components/Footer';
 
 export default function AssetFinancePage() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: '',
-    agreeToUpdates: false,
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      message: '',
-      agreeToUpdates: false,
-    });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    const checked = (e.target as HTMLInputElement).checked;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <ServiceHero
-          title="Asset Finance"
-          subtitle="Acquire essential equipment and machinery with flexible financing solutions"
-          imagePath="/asset-finance-hero.jpg"
-        />
+        {/* Two Column Layout: Content + Sticky Form */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 py-12">
 
-        {/* Main Content Section - Two Column Layout */}
-        <section className="py-12 bg-[#1e3f6a]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Left Column - Content */}
-              <div className="space-y-6">
-                {/* Images Row */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src="/machinery-finance.jpg"
-                      alt="Machinery Finance"
-                      width={300}
-                      height={200}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src="/lorry.jpg"
-                      alt="Vehicle Finance"
-                      width={300}
-                      height={200}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src="/crawler-crane.jpg"
-                      alt="Construction Equipment Finance"
-                      width={300}
-                      height={200}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
+            {/* Left Column - Hero and Content (2/3 width) */}
+            <div className="lg:col-span-2 space-y-12">
+              {/* Hero Section */}
+              <ServiceHero
+                title="Asset Finance"
+                subtitle="Acquire essential equipment and machinery with flexible financing solutions"
+                imagePath="/asset-finance-hero.jpg"
+              />
+
+              {/* Images Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <Image
+                    src="/machinery-finance.jpg"
+                    alt="Machinery Finance"
+                    width={300}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
                 </div>
+                <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <Image
+                    src="/lorry.jpg"
+                    alt="Vehicle Finance"
+                    width={300}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <Image
+                    src="/crawler-crane.jpg"
+                    alt="Construction Equipment Finance"
+                    width={300}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+              </div>
 
-                {/* Text Content */}
-                <div className="bg-white rounded-lg p-8 shadow-lg">
-                  <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
-                    What is Asset Finance?
-                  </h2>
-                  <div className="text-gray-700 space-y-4">
+              {/* Content Section */}
+              <div className="bg-white rounded-lg p-8 shadow-lg">
+                <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
+                  What is Asset Finance?
+                </h2>
+                <div className="space-y-4">
+                  <div className="text-sm text-gray-700 space-y-4">
                     <p>
                       Asset finance is a broad term for a range of financial products that allow businesses to acquire essential assets like machinery, vehicles, or equipment, rather than paying the full cost upfront. Instead of a standard loan, asset finance uses the purchased asset as collateral for the loan, or provides the asset through mechanisms like leasing.
                     </p>
                     <p>
                       Businesses make regular, affordable monthly payments over an agreed period, helping to conserve cash flow for other priorities, and can also use asset refinance to unlock capital from existing assets.
                     </p>
+                  </div>
 
-                    <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-4">Benefits of Asset Finance</h3>
+                  <div className="border-t pt-6 mt-6">
+                    <h3 className="text-lg font-semibold text-[#1e3f6a] mb-3">Benefits of Asset Finance</h3>
+                    <ul className="list-disc pl-6 space-y-2 text-sm text-gray-700">
+                      <li><span className="font-semibold">Preserves Cash Flow:</span> Spreading costs over time prevents a large upfront outlay, protecting your business&apos;s capital for other essential expenses.</li>
+                      <li><span className="font-semibold">Access to Modern Assets:</span> It allows businesses to access new, more advanced, or necessary equipment that they might not otherwise be able to afford.</li>
+                      <li><span className="font-semibold">Flexibility:</span> Various asset finance options are available, allowing businesses to choose an agreement that best suits their specific needs.</li>
+                      <li><span className="font-semibold">Can Use Existing Assets:</span> Asset refinance offers a way to generate cash by borrowing against the value of assets your business already owns.</li>
+                    </ul>
+                  </div>
 
-                      <ul className="list-disc pl-6 space-y-2 text-sm">
-                        <li><strong>Preserves Cash Flow:</strong> Spreading costs over time prevents a large upfront outlay, protecting your business&apos;s capital for other essential expenses.</li>
-                        <li><strong>Access to Modern Assets:</strong> It allows businesses to access new, more advanced, or necessary equipment that they might not otherwise be able to afford.</li>
-                        <li><strong>Flexibility:</strong> Various asset finance options are available, allowing businesses to choose an agreement that best suits their specific needs.</li>
-                        <li><strong>Can Use Existing Assets:</strong> Asset refinance offers a way to generate cash by borrowing against the value of assets your business already owns.</li>
-                      </ul>
-                    </div>
+                  <div className="border-t pt-6 mt-6">
+                    <h3 className="text-lg font-semibold text-[#1e3f6a] mb-3">Common Types of Asset Finance</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Hire Purchase</h4>
+                        <p className="text-sm text-gray-700">You pay a deposit and then make regular payments, owning the asset at the end of the term.</p>
+                      </div>
 
-                    <div className="border-t pt-6 mt-6">
-                      <h3 className="text-lg font-semibold text-[#1e3f6a] mb-4">Common Types of Asset Finance</h3>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Leasing (including Finance and Operating Leases)</h4>
+                        <p className="text-sm text-gray-700">You pay a regular fee to use the asset for an agreed period, similar to renting.</p>
+                      </div>
 
-                      <ul className="list-disc pl-6 space-y-2 text-sm">
-                        <li><strong>Hire Purchase:</strong> You pay a deposit and then make regular payments, owning the asset at the end of the term.</li>
-                        <li><strong>Leasing (including Finance and Operating Leases):</strong> You pay a regular fee to use the asset for an agreed period, similar to renting.</li>
-                        <li><strong>Refinancing/Capital Release:</strong> You borrow money against assets you already own.</li>
-                      </ul>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Refinancing/Capital Release</h4>
+                        <p className="text-sm text-gray-700">You borrow money against assets you already own.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Right Column - Contact Form */}
-              <div>
-                <div className="bg-[#1e3f6a] rounded-lg p-6 shadow-lg sticky top-4 lg:top-[240px]">
-                  <h3 className="text-xl font-bold text-white mb-6">Contact us for information on Asset Finance</h3>
-
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-                        placeholder="First Name *"
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-                        placeholder="Last Name *"
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-                        placeholder="Email *"
-                      />
-                    </div>
-
-                    <div>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={4}
-                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent resize-none"
-                        placeholder="Your message..."
-                      />
-                    </div>
-
-                    <div className="flex items-start">
-                      <input
-                        type="checkbox"
-                        id="agreeToUpdates"
-                        name="agreeToUpdates"
-                        checked={formData.agreeToUpdates}
-                        onChange={handleChange}
-                        required
-                        className="mt-1 h-4 w-4 rounded border-white/20 cursor-pointer"
-                      />
-                      <label htmlFor="agreeToUpdates" className="ml-3 text-xs text-white/90">
-                        I agree to receive updates about Asset Finance products. <Link href="#privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>
-                      </label>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full bg-white hover:bg-gray-100 text-[#1e3f6a] font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
-                    >
-                      Send Message
-                    </button>
-                  </form>
-                </div>
-              </div>
             </div>
+
+            {/* Right Column - Sticky Form (1/3 width) */}
+            <div className="lg:col-span-1">
+              <StickyContactForm serviceName="Asset Finance" />
+            </div>
+
           </div>
-        </section>
+        </div>
       </main>
       <Footer />
     </div>

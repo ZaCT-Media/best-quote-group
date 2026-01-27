@@ -11,7 +11,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <div className="sticky top-0 z-50">
+    <div>
       {/* Mobile Phone Banner */}
       <div className="lg:hidden bg-[#1e3f6a] text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

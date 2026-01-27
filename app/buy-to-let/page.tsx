@@ -1,155 +1,114 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Header from '../components/Header';
 import ServiceHero from '../components/ServiceHero';
+import StickyContactForm from '../components/StickyContactForm';
 import Footer from '../components/Footer';
 
 export default function BuyToLetPage() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: '',
-    agreeToUpdates: false,
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      message: '',
-      agreeToUpdates: false,
-    });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    const checked = (e.target as HTMLInputElement).checked;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <ServiceHero
-          title="Buy to Let HMO & MUFB Finance"
-          subtitle="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do"
-          imagePath="/hmo-hero.jpg"
-          backgroundPosition="center"
-        />
+        {/* Two Column Layout: Content + Sticky Form */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 py-12">
 
-        {/* Main Content Section - Two Column Layout */}
-        <section className="py-12 bg-[#1e3f6a]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Left Column - Images and Text Content */}
-              <div className="space-y-6">
-                {/* Images Row */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src="/hmo-1.jpg"
-                      alt="HMO Property 1"
-                      width={300}
-                      height={200}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src="/hmo-2.jpg"
-                      alt="HMO Property 2"
-                      width={300}
-                      height={200}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src="/mufb.png"
-                      alt="MUFB Property"
-                      width={300}
-                      height={200}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
+            {/* Left Column - Hero and Content (2/3 width) */}
+            <div className="lg:col-span-2 space-y-12">
+              {/* Hero Section */}
+              <ServiceHero
+                title="Buy to Let HMO & MUFB Finance"
+                subtitle="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do"
+                imagePath="/hmo-hero.jpg"
+                backgroundPosition="center"
+              />
+
+              {/* Images Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <Image
+                    src="/hmo-1.jpg"
+                    alt="HMO Property 1"
+                    width={300}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
                 </div>
+                <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <Image
+                    src="/hmo-2.jpg"
+                    alt="HMO Property 2"
+                    width={300}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <Image
+                    src="/mufb.png"
+                    alt="MUFB Property"
+                    width={300}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+              </div>
 
-                {/* Text Content */}
-                <div className="bg-white rounded-lg p-8 shadow-lg">
-                  <div className="mb-8">
-                    <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
-                      Buy-to-Let (BTL) Mortgages
-                    </h2>
-                    <div className="text-gray-700 space-y-4">
-                      <p>
-                        A BTL (Buy-to-Let) mortgage is a type of loan specifically designed for purchasing property that you intend to rent out to tenants, rather than live in yourself. It&apos;s an investment mortgage for landlords and property investors.
-                      </p>
+              {/* Content Section */}
+              <div className="bg-white rounded-lg p-8 shadow-lg">
+                <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
+                  Buy-to-Let (BTL) Mortgages
+                </h2>
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-700">
+                    A BTL (Buy-to-Let) mortgage is a type of loan specifically designed for purchasing property that you intend to rent out to tenants, rather than live in yourself. It&apos;s an investment mortgage for landlords and property investors.
+                  </p>
 
-                      <h3 className="text-lg font-semibold text-[#1e3f6a] mt-4">Key Characteristics:</h3>
-                      <ul className="list-disc pl-6 space-y-1 text-sm">
-                        <li>Higher deposits: Typically require 20-25% deposit minimum, often more than standard residential mortgages</li>
-                        <li>Interest rates: Usually higher than owner-occupier mortgages, reflecting the increased risk lenders perceive with rental properties</li>
-                        <li>Rental yield requirements: Lenders typically want the expected rental income to be 125-145% of the monthly mortgage payment to ensure the property can cover costs</li>
-                        <li>Stricter lending criteria: More stringent income verification and credit checks, as lenders view buy-to-let as higher risk</li>
-                        <li>Tax implications: Rental income is taxable, and there are specific rules around mortgage interest relief for landlords</li>
-                        <li>Different regulations: BTL mortgages aren&apos;t covered by the same consumer protections as residential mortgages and may have different early repayment charges</li>
-                      </ul>
-
-                      <p className="text-sm">
-                        BTL mortgages became popular during property booms as a way for individuals to build property portfolios, though recent tax changes and regulations have made them less attractive than they once were. They&apos;re commonly used by both individual investors and those looking to supplement their retirement income through rental yields.
-                      </p>
-                    </div>
+                  <div className="border-t pt-6 mt-6">
+                    <h3 className="text-lg font-semibold text-[#1e3f6a] mb-3">Key Characteristics</h3>
+                    <ul className="list-disc pl-6 space-y-2 text-sm text-gray-700">
+                      <li>Higher deposits: Typically require 20-25% deposit minimum, often more than standard residential mortgages</li>
+                      <li>Interest rates: Usually higher than owner-occupier mortgages, reflecting the increased risk lenders perceive with rental properties</li>
+                      <li>Rental yield requirements: Lenders typically want the expected rental income to be 125-145% of the monthly mortgage payment to ensure the property can cover costs</li>
+                      <li>Stricter lending criteria: More stringent income verification and credit checks, as lenders view buy-to-let as higher risk</li>
+                      <li>Tax implications: Rental income is taxable, and there are specific rules around mortgage interest relief for landlords</li>
+                      <li>Different regulations: BTL mortgages aren&apos;t covered by the same consumer protections as residential mortgages and may have different early repayment charges</li>
+                    </ul>
+                    <p className="text-sm text-gray-700 mt-4">
+                      BTL mortgages became popular during property booms as a way for individuals to build property portfolios, though recent tax changes and regulations have made them less attractive than they once were. They&apos;re commonly used by both individual investors and those looking to supplement their retirement income through rental yields.
+                    </p>
                   </div>
 
-                  <div className="border-t pt-6 mb-8">
-                    <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
-                      House of Multiple Occupancy (HMO)
-                    </h2>
-                    <div className="text-gray-700 space-y-4">
-                      <p>
-                        A House of Multiple Occupancy (HMO) is a property where multiple tenants live who are not all from the same household or family. In the UK, where this term is most commonly used, an HMO typically involves:
-                      </p>
+                  <div className="border-t pt-6 mt-6">
+                    <h3 className="text-lg font-semibold text-[#1e3f6a] mb-3">House of Multiple Occupancy (HMO)</h3>
+                    <p className="text-sm text-gray-700 mb-4">
+                      A House of Multiple Occupancy (HMO) is a property where multiple tenants live who are not all from the same household or family. In the UK, where this term is most commonly used, an HMO typically involves:
+                    </p>
 
-                      <h3 className="text-lg font-semibold text-[#1e3f6a] mt-4">Key Characteristics:</h3>
-                      <ul className="list-disc pl-6 space-y-1 text-sm">
-                        <li>Three or more tenants forming more than one household</li>
-                        <li>Tenants who share facilities like kitchens, bathrooms, or living areas</li>
-                        <li>Each tenant usually has their own bedroom but shares common areas</li>
-                        <li>Tenants pay rent individually rather than as a group</li>
-                      </ul>
+                    <h4 className="font-semibold text-gray-900 mb-2">Key Characteristics</h4>
+                    <ul className="list-disc pl-6 space-y-2 text-sm text-gray-700 mb-4">
+                      <li>Three or more tenants forming more than one household</li>
+                      <li>Tenants who share facilities like kitchens, bathrooms, or living areas</li>
+                      <li>Each tenant usually has their own bedroom but shares common areas</li>
+                      <li>Tenants pay rent individually rather than as a group</li>
+                    </ul>
 
-                      <h3 className="text-lg font-semibold text-[#1e3f6a] mt-4">Common Types:</h3>
-                      <ul className="list-disc pl-6 space-y-1 text-sm">
-                        <li>Student accommodation with individual bedrooms and shared facilities</li>
-                        <li>Bedsits or studio flats within a converted house</li>
-                        <li>Shared houses where professionals rent individual rooms</li>
-                        <li>Converted properties split into multiple living units</li>
-                      </ul>
+                    <h4 className="font-semibold text-gray-900 mb-2">Common Types</h4>
+                    <ul className="list-disc pl-6 space-y-2 text-sm text-gray-700 mb-4">
+                      <li>Student accommodation with individual bedrooms and shared facilities</li>
+                      <li>Bedsits or studio flats within a converted house</li>
+                      <li>Shared houses where professionals rent individual rooms</li>
+                      <li>Converted properties split into multiple living units</li>
+                    </ul>
 
-                      <p className="text-sm">
-                        HMOs are subject to specific regulations and licensing requirements, particularly for larger properties (typically 5+ occupants). These cover fire safety, space standards, amenities, and management standards to ensure tenant welfare. HMOs provide affordable housing options, particularly in areas with high property prices, and are popular among students, young professionals, and others seeking flexible, lower-cost accommodation.
-                      </p>
-                    </div>
+                    <p className="text-sm text-gray-700">
+                      HMOs are subject to specific regulations and licensing requirements, particularly for larger properties (typically 5+ occupants). These cover fire safety, space standards, amenities, and management standards to ensure tenant welfare. HMOs provide affordable housing options, particularly in areas with high property prices, and are popular among students, young professionals, and others seeking flexible, lower-cost accommodation.
+                    </p>
                   </div>
 
-                  <div className="border-t pt-6">
-                    <h2 className="text-2xl font-bold text-[#1e3f6a] mb-4">
-                      Multi-Unit Freehold Block (MUFB)
-                    </h2>
-                    <div className="text-gray-700 space-y-4">
+                  <div className="border-t pt-6 mt-6">
+                    <h3 className="text-lg font-semibold text-[#1e3f6a] mb-3">Multi-Unit Freehold Block (MUFB)</h3>
+                    <div className="space-y-3 text-sm text-gray-700">
                       <p>
                         Multi-unit freehold blocks (MUFBs) are singular freehold buildings that contain multiple self-contained units. A typical example is a tower block with multiple flats. Each one of these units can have its own entrance, kitchen, and bedrooms etc. But, there will be certain shared areas among the residents, such as hallways and outdoor spaces.
                       </p>
@@ -166,91 +125,15 @@ export default function BuyToLetPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Right Column - Contact Form */}
-              <div>
-                <div className="bg-[#1e3f6a] rounded-lg p-6 shadow-lg sticky top-4 lg:top-[240px]">
-                  <h3 className="text-xl font-bold text-white mb-6">Contact us for information on Buy to Let HMO & MUFB Finance</h3>
-
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-                        placeholder="First Name *"
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-                        placeholder="Last Name *"
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-                        placeholder="Email *"
-                      />
-                    </div>
-
-                    <div>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={4}
-                        className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder-white/70 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent resize-none"
-                        placeholder="Your message..."
-                      />
-                    </div>
-
-                    <div className="flex items-start">
-                      <input
-                        type="checkbox"
-                        id="agreeToUpdates"
-                        name="agreeToUpdates"
-                        checked={formData.agreeToUpdates}
-                        onChange={handleChange}
-                        required
-                        className="mt-1 h-4 w-4 rounded border-white/20 cursor-pointer"
-                      />
-                      <label htmlFor="agreeToUpdates" className="ml-3 text-xs text-white/90">
-                        I agree to receive updates about Buy to Let HMO & MUFB products. <Link href="#privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>
-                      </label>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full bg-white hover:bg-gray-100 text-[#1e3f6a] font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
-                    >
-                      Send Message
-                    </button>
-                  </form>
-                </div>
-              </div>
             </div>
+
+            {/* Right Column - Sticky Form (1/3 width) */}
+            <div className="lg:col-span-1">
+              <StickyContactForm serviceName="Buy to Let HMO & MUFB Finance" />
+            </div>
+
           </div>
-        </section>
+        </div>
       </main>
       <Footer />
     </div>
