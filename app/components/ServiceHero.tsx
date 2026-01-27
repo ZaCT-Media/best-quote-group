@@ -47,8 +47,8 @@ export default function ServiceHero({ title, subtitle, imagePath, objectFit = 'c
         {/* Key Benefits */}
         <div className="grid grid-cols-1 gap-4 pt-6">
           <div className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <div className="flex-shrink-0 w-12 h-12 bg-yellow-400/20 rounded-xl flex items-center justify-center">
-              <svg className="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex-shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-[#1e3f6a]" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
             </div>
@@ -59,8 +59,8 @@ export default function ServiceHero({ title, subtitle, imagePath, objectFit = 'c
           </div>
 
           <div className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <div className="flex-shrink-0 w-12 h-12 bg-yellow-400/20 rounded-xl flex items-center justify-center">
-              <svg className="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex-shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-[#1e3f6a]" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
             </div>
@@ -71,8 +71,8 @@ export default function ServiceHero({ title, subtitle, imagePath, objectFit = 'c
           </div>
 
           <div className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <div className="flex-shrink-0 w-12 h-12 bg-yellow-400/20 rounded-xl flex items-center justify-center">
-              <svg className="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex-shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-[#1e3f6a]" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
             </div>
