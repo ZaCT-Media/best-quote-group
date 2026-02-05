@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { contactData } from '../lib/contact-data';
 
 export default function Hero() {
   const [formData, setFormData] = useState({
@@ -9,22 +10,64 @@ export default function Hero() {
     lastName: '',
     email: '',
     phone: '',
+    message: '',
     agreeToUpdates: false,
   });
+  const [turnstileToken, setTurnstileToken] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    // Add Turnstile script if not already added
+    if (!document.querySelector('script[src*="turnstile"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    // Add global callback with unique name for hero form
+    ;(window as Window & { onTurnstileSuccessHero?: (token: string) => void }).onTurnstileSuccessHero = (token: string) => {
+      setTurnstileToken(token);
+    };
+
+    return () => {
+      delete (window as Window & { onTurnstileSuccessHero?: (token: string) => void }).onTurnstileSuccessHero;
+    };
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      agreeToUpdates: false,
-    });
+
+    if (!turnstileToken) {
+      alert('Please complete the CAPTCHA verification.');
+      return;
+    }
+
+    try {
+      const response = await fetch('/formSubmit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          'cf-turnstile-response': turnstileToken
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        window.location.href = result.redirect || '/thank-you';
+      } else {
+        alert(result.message || 'An error occurred. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -156,6 +199,18 @@ export default function Hero() {
                   />
                 </div>
 
+                <div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={3}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent resize-none"
+                    placeholder="Additional details (optional)"
+                  ></textarea>
+                </div>
+
                 <div className="flex items-start gap-3 pt-2">
                   <input
                     type="checkbox"
@@ -174,9 +229,13 @@ export default function Hero() {
                   </label>
                 </div>
 
+                {/* Turnstile CAPTCHA */}
+                <div className="cf-turnstile" data-sitekey={contactData.turnstileSiteKey} data-callback="onTurnstileSuccessHero"></div>
+
                 <button
                   type="submit"
-                  className="w-full bg-[#1e3f6a] hover:bg-[#2a5186] text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg cursor-pointer"
+                  disabled={!turnstileToken}
+                  className="w-full bg-[#1e3f6a] hover:bg-[#2a5186] text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
                 >
                   Get My Free Quote
                 </button>

@@ -1,5 +1,6 @@
 export const contactData = {
   phone: '01279909750',
-  whatsapp: '447123456789', // Replace with actual WhatsApp number
+  whatsapp: '447923601369',
   email: 'contactus@bestquotecommercialfinance.com',
+  turnstileSiteKey: '0x4AAAAAACYH40VG4aLznQE0', // Replace with your actual Turnstile site key
 };
