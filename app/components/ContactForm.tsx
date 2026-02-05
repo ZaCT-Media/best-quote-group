@@ -195,7 +195,9 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
             </div>
 
             {/* Turnstile CAPTCHA */}
-            <div className="cf-turnstile" data-sitekey={contactData.turnstileSiteKey} data-callback="onTurnstileSuccess"></div>
+            <div className="flex justify-center w-full overflow-x-auto">
+              <div className="cf-turnstile" data-sitekey={contactData.turnstileSiteKey} data-callback="onTurnstileSuccess" data-size="flexible"></div>
+            </div>
 
             {/* Submit Button */}
             <div>

@@ -177,7 +177,9 @@ export default function StickyContactForm({ serviceName }: StickyContactFormProp
             </div>
 
             {/* Turnstile CAPTCHA */}
-            <div className="cf-turnstile" data-sitekey={contactData.turnstileSiteKey} data-callback="onTurnstileSuccessSticky"></div>
+            <div className="flex justify-center w-full overflow-x-auto">
+              <div className="cf-turnstile" data-sitekey={contactData.turnstileSiteKey} data-callback="onTurnstileSuccessSticky" data-size="flexible"></div>
+            </div>
 
             <button
               type="submit"
