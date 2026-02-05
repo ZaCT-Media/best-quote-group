@@ -37,11 +37,6 @@ export default function Hero() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!turnstileToken) {
-      alert('Please complete the CAPTCHA verification.');
-      return;
-    }
-
     try {
       const response = await fetch('/formSubmit', {
         method: 'POST',
@@ -235,8 +230,7 @@ export default function Hero() {
 
                 <button
                   type="submit"
-                  disabled={!turnstileToken}
-                  className="w-full bg-[#1e3f6a] hover:bg-[#2a5186] text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
+                  className="w-full bg-[#1e3f6a] hover:bg-[#2a5186] text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg cursor-pointer"
                 >
                   Get My Free Quote
                 </button>

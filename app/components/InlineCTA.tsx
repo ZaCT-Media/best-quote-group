@@ -44,11 +44,6 @@ export default function InlineCTA({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!turnstileToken) {
-      alert('Please complete the CAPTCHA verification.');
-      return;
-    }
-
     try {
       const response = await fetch('/formSubmit', {
         method: 'POST',
@@ -141,8 +136,7 @@ export default function InlineCTA({
 
           <button
             type="submit"
-            disabled={!turnstileToken}
-            className="w-full md:w-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
+            className="w-full md:w-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer"
           >
             Request Callback
           </button>

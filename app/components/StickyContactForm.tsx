@@ -42,11 +42,6 @@ export default function StickyContactForm({ serviceName }: StickyContactFormProp
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!turnstileToken) {
-      alert('Please complete the CAPTCHA verification.');
-      return;
-    }
-
     try {
       const response = await fetch('/formSubmit', {
         method: 'POST',
@@ -186,8 +181,7 @@ export default function StickyContactForm({ serviceName }: StickyContactFormProp
 
             <button
               type="submit"
-              disabled={!turnstileToken}
-              className="w-full bg-gradient-to-r from-[#1e3f6a] to-[#2a5186] hover:from-[#2a5186] hover:to-[#1e3f6a] text-white font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg cursor-pointer transform hover:scale-[1.02] active:scale-[0.98] disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:hover:from-gray-400 disabled:hover:to-gray-400"
+              className="w-full bg-gradient-to-r from-[#1e3f6a] to-[#2a5186] hover:from-[#2a5186] hover:to-[#1e3f6a] text-white font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg cursor-pointer transform hover:scale-[1.02] active:scale-[0.98]"
             >
               Get My Free Quote
             </button>

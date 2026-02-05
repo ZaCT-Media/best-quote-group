@@ -42,11 +42,6 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!turnstileToken) {
-      alert('Please complete the CAPTCHA verification.');
-      return;
-    }
-
     try {
       const response = await fetch('/formSubmit', {
         method: 'POST',
@@ -206,8 +201,7 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
             <div>
               <button
                 type="submit"
-                disabled={!turnstileToken}
-                className="w-full bg-[#1e3f6a] hover:bg-[#1e3f6a] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer"
+                className="w-full bg-[#1e3f6a] hover:bg-[#1e3f6a] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg cursor-pointer"
               >
                 Submit Enquiry
               </button>
