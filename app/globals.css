@@ -18,12 +18,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Ensure header navigation is always visible on desktop - fallback for Chrome issues */
+/* Targeted fallback for desktop navigation elements on Chrome */
 @media (min-width: 1024px) {
-  header nav {
+  .desktop-top-nav {
     display: flex !important;
   }
-  header nav.hidden {
+  .desktop-phone-section {
     display: flex !important;
+  }
+  .desktop-bottom-nav {
+    display: block !important;
   }
 }
