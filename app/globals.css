@@ -17,3 +17,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Ensure header navigation is always visible on desktop - fallback for Chrome issues */
+@media (min-width: 1024px) {
+  header nav {
+    display: flex !important;
+  }
+  header nav.hidden {
+    display: flex !important;
+  }
+}

@@ -25,10 +25,10 @@ export default function Header() {
         </div>
       </div>
 
-      <header className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-6 relative">
+      <header className="bg-white shadow-md overflow-visible relative z-30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-6 relative overflow-visible z-30">
           {/* Top Header */}
-          <div className="flex justify-between items-center py-3 lg:py-4">
+          <div className="flex justify-between items-center py-3 lg:py-4 overflow-visible">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/">
@@ -44,9 +44,9 @@ export default function Header() {
             </div>
 
             {/* Right side: Navigation and Phone */}
-            <div className="flex flex-col items-end justify-center lg:space-y-3">
+            <div className="flex flex-col items-end justify-center lg:space-y-3 overflow-visible min-w-0 relative z-30">
               {/* Top Navigation - Desktop */}
-              <nav className="hidden lg:flex items-center space-x-4 text-sm text-gray-600">
+              <nav className="hidden lg:flex items-center space-x-4 text-sm text-gray-600 flex-shrink-0 whitespace-nowrap">
                 <Link href="/" className="hover:text-[#1e3f6a] transition cursor-pointer">
                   HOME
                 </Link>
@@ -80,7 +80,7 @@ export default function Header() {
               </button>
 
               {/* Phone - Desktop Only */}
-              <div className="hidden lg:flex flex-col items-end space-y-2">
+              <div className="hidden lg:flex flex-col items-end space-y-2 flex-shrink-0 whitespace-nowrap">
                 <a href="tel:01279909750" className="flex items-center space-x-2 text-[#1e3f6a] cursor-pointer">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -222,8 +222,8 @@ export default function Header() {
         )}
 
           {/* Bottom Navigation Bar - Desktop */}
-          <nav className="hidden lg:block bg-[#1e3f6a] rounded-full px-8 py-3">
-            <ul className="flex justify-between items-center text-white text-sm font-medium">
+          <nav className="hidden lg:block bg-[#1e3f6a] rounded-full px-8 py-3 overflow-visible">
+            <ul className="flex justify-between items-center text-white text-sm font-medium whitespace-nowrap">
               <li><Link href="/business-loans" className={`hover:text-gray-200 transition cursor-pointer pb-1 ${pathname === '/business-loans' ? 'border-b-2 border-white' : ''}`}>Business Loans</Link></li>
               <li><Link href="/commercial-mortgages" className={`hover:text-gray-200 transition cursor-pointer pb-1 ${pathname === '/commercial-mortgages' ? 'border-b-2 border-white' : ''}`}>Commercial Mortgages</Link></li>
               <li><Link href="/buy-to-let" className={`hover:text-gray-200 transition cursor-pointer pb-1 ${pathname === '/buy-to-let' ? 'border-b-2 border-white' : ''}`}>Buy to Lets HMO/MUFB</Link></li>
