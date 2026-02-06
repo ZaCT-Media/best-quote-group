@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   description: "Expert commercial finance solutions including business loans, commercial mortgages, bridging loans, development finance, and asset finance. Get expert advice on your commercial and domestic finance needs.",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         {children}
         <WhatsAppButton />
