@@ -137,7 +137,7 @@ export default function ContactForm({ serviceName }: ContactFormProps) {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent"
-                placeholder="john.smith@example.com"
+                placeholder="john.smith@example.co.uk"
               />
             </div>
 
