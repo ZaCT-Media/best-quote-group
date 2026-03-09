@@ -96,7 +96,16 @@ export default function BusinessServicesPage() {
 
             {/* Right Column - Sticky Form (1/3 width) */}
             <div className="lg:col-span-1">
-              <StickyContactForm serviceName="Business Services" />
+              <StickyContactForm
+                serviceName="Business Services"
+                serviceFields={[
+                  {
+                    name: 'adviceNeeded',
+                    label: 'Please tell us what you need help and advice on',
+                    placeholder: 'E.g planning permission, Building Warranties',
+                  },
+                ]}
+              />
             </div>
 
           </div>

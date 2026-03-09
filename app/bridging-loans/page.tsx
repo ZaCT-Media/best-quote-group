@@ -71,7 +71,13 @@ export default function BridgingLoansPage() {
 
             {/* Right Column - Sticky Form (1/3 width) */}
             <div className="lg:col-span-1">
-              <StickyContactForm serviceName="Bridging Loans" />
+              <StickyContactForm
+                serviceName="Bridging Loans"
+                serviceFields={[
+                  { name: 'amountToBorrow', label: 'How much are you looking to borrow?' },
+                  { name: 'term', label: 'Over what term?', placeholder: 'I.E 6 months, 12 months' },
+                ]}
+              />
             </div>
 
           </div>

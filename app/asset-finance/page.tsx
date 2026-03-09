@@ -103,7 +103,13 @@ export default function AssetFinancePage() {
 
             {/* Right Column - Sticky Form (1/3 width) */}
             <div className="lg:col-span-1">
-              <StickyContactForm serviceName="Asset Finance" />
+              <StickyContactForm
+                serviceName="Asset Finance"
+                serviceFields={[
+                  { name: 'assetType', label: 'What is the asset you want to finance?' },
+                  { name: 'amountToBorrow', label: 'How much do you want to borrow?' },
+                ]}
+              />
             </div>
 
           </div>

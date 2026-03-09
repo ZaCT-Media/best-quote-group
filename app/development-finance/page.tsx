@@ -112,7 +112,14 @@ export default function DevelopmentFinancePage() {
 
             {/* Right Column - Sticky Form (1/3 width) */}
             <div className="lg:col-span-1">
-              <StickyContactForm serviceName="Development Finance" />
+              <StickyContactForm
+                serviceName="Development Finance"
+                serviceFields={[
+                  { name: 'amountToBorrow', label: 'How much do you want to borrow?' },
+                  { name: 'currentWorth', label: 'How much is the current development worth?' },
+                  { name: 'finishedWorth', label: 'How much will the development be worth once finished?' },
+                ]}
+              />
             </div>
 
           </div>

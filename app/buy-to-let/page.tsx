@@ -129,7 +129,14 @@ export default function BuyToLetPage() {
 
             {/* Right Column - Sticky Form (1/3 width) */}
             <div className="lg:col-span-1">
-              <StickyContactForm serviceName="Buy to Let HMO & MUFB Finance" />
+              <StickyContactForm
+                serviceName="Buy to Let HMO & MUFB Finance"
+                serviceFields={[
+                  { name: 'propertyValue', label: 'What is the property value?' },
+                  { name: 'amountToBorrow', label: 'How much do you want to borrow?' },
+                  { name: 'monthlyRent', label: 'How much does the property obtain in monthly rent?' },
+                ]}
+              />
             </div>
 
           </div>

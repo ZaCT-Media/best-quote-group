@@ -66,7 +66,13 @@ export default function BusinessLoansPage() {
 
             {/* Right Column - Sticky Form (1/3 width) */}
             <div className="lg:col-span-1">
-              <StickyContactForm serviceName="Business Loans" />
+              <StickyContactForm
+                serviceName="Business Loans"
+                serviceFields={[
+                  { name: 'amountToBorrow', label: 'How much do you want to borrow?' },
+                  { name: 'fundsDuration', label: 'For how long do you want the funds?' },
+                ]}
+              />
             </div>
 
           </div>

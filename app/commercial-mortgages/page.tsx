@@ -109,7 +109,14 @@ export default function CommercialMortgagesPage() {
 
             {/* Right Column - Sticky Form (1/3 width) */}
             <div className="lg:col-span-1">
-              <StickyContactForm serviceName="Commercial Mortgages" />
+              <StickyContactForm
+                serviceName="Commercial Mortgages"
+                serviceFields={[
+                  { name: 'amountToBorrow', label: 'How much do you want to borrow?' },
+                  { name: 'termOrAdvice', label: 'Over what term? Or advice needed...', placeholder: 'E.g 10 years, or describe what you need' },
+                  { name: 'propertyType', label: 'For what property type?', placeholder: 'E.g Industrial Unit' },
+                ]}
+              />
             </div>
 
           </div>
