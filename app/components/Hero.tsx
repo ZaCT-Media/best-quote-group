@@ -10,7 +10,7 @@ export default function Hero() {
     lastName: '',
     email: '',
     phone: '',
-    message: '',
+    service: '',
     agreeToUpdates: false,
   });
   const [turnstileToken, setTurnstileToken] = useState('');
@@ -62,7 +62,7 @@ export default function Hero() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
     setFormData(prev => ({
@@ -196,15 +196,25 @@ export default function Hero() {
                 </div>
 
                 <div>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+                    Please contact me with regards to the following:
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
                     onChange={handleChange}
-                    rows={3}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent resize-none"
-                    placeholder="Additional details (optional)"
-                  ></textarea>
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3f6a] focus:border-transparent bg-white cursor-pointer"
+                  >
+                    <option value="" disabled>Select a service...</option>
+                    <option value="Business Loans">Business Loans</option>
+                    <option value="Commercial Mortgages">Commercial Mortgages</option>
+                    <option value="Buy To Let Inc HMO and MUFB">Buy To Let Inc HMO and MUFB</option>
+                    <option value="Bridging Loans">Bridging Loans</option>
+                    <option value="Development Finance">Development Finance</option>
+                    <option value="Asset Finance">Asset Finance</option>
+                  </select>
                 </div>
 
                 <div className="flex items-start gap-3 pt-2">

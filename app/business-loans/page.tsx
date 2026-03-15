@@ -70,7 +70,7 @@ export default function BusinessLoansPage() {
                 serviceName="Business Loans"
                 serviceFields={[
                   { name: 'amountToBorrow', label: 'How much do you want to borrow?' },
-                  { name: 'fundsDuration', label: 'For how long do you want the funds?' },
+                  { name: 'fundsDuration', label: 'For how long do you want the funds?', placeholder: 'Enter Term I.E 6 months, 12 months' },
                 ]}
               />
             </div>
