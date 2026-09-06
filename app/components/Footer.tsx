@@ -111,12 +111,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Disclaimer & Social */}
+        {/* Social */}
         <div className="pt-8 border-t border-gray-300">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-gray-500 text-center md:text-left">
-              YOUR HOME MAY BE REPOSSESSED IF YOU DO NOT KEEP UP REPAYMENTS ON YOUR MORTGAGE.
-            </p>
+          <div className="flex justify-center items-center">
             <div className="flex space-x-5">
               <Link href="#" className="text-gray-400 hover:text-[#1e3f6a] transition" aria-label="Facebook">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -130,6 +127,13 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* Regulatory Disclaimer */}
+        <div className="pt-8 mt-8 border-t border-gray-300">
+          <p className="text-xs text-gray-500 leading-relaxed">
+            BestQuote Commercial Finance Ltd is a commercial finance introducer, not a lender. We are not authorised or regulated by the Financial Conduct Authority. We arrange unregulated business finance only, for limited companies, LLPs, partnerships of four or more partners, and &mdash; where the borrowing exceeds &pound;25,000 and is wholly or predominantly for business purposes &mdash; sole traders, individuals, and smaller partnerships. We cannot assist with regulated mortgages, consumer credit, consumer buy-to-let, or any lending secured on your home. Clients do not have access to the Financial Ombudsman Service or the Financial Services Compensation Scheme in respect of our services. We may receive commission from lenders, which may vary by lender and product. BestQuote Commercial Finance Ltd, registered in England &amp; Wales, company no. 17367591. ICO registration ZC226376.
+          </p>
         </div>
       </div>
 
